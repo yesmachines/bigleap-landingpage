@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigLeap Landing</title>
+    <link rel="preload" href="./img/bigleap-logo.png" as="image">
+    <link rel="preload" href="./img/cursor.webp" as="image">
+    <link rel="preload" href="img/ninja-indroduction-video.webm" as="video" type="video/webm">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Suez+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/stlye.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ 
+</head>
+
+<body class="bg-gray-100">
+
+    <div id="customCursor" class="custom-cursor" aria-hidden="true">
+        <img src="./img/cursor.webp" alt="" width="28" height="28" decoding="async" draggable="false">
+    </div>
+
+    <!-- Hero with overlapping header -->
+    <section class="relative min-h-[88vh] overflow-hidden sm:min-h-[80vh] lg:min-h-screen">
+        <!-- Header (overlaps the video) -->
+        <header id="siteHeader" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+            <div class="container mx-auto px-3 sm:px-6">
+                <div class="header-inner flex items-center justify-between gap-2 py-3 transition-all duration-300 sm:gap-4 sm:py-5">
+                    <!-- Logo -->
+                    <a href="#" class="flex shrink-0 items-center">
+                        <img src="./img/bigleap-logo.png" alt="BigLeap Landing" width="160" height="80" fetchpriority="high" decoding="async" class="logo-img h-10 w-auto drop-shadow-md transition-all duration-300 sm:h-16 lg:h-20">
+                    </a>
+
+                    <!-- Contact info -->
+                    <div class="flex min-w-0 items-center justify-end gap-2 sm:gap-3 flex-row-reverse sm:flex-row">
+                        <a href="tel:+971542791581"
+                            class="contact-pill group inline-flex items-center gap-2 px-1 py-2 whitespace-nowrap rounded-full border border-white/20 bg-white/10 px-2.5 py-1.5 text-[11px] font-medium text-white shadow-lg shadow-black/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 sm:px-4 sm:py-2 sm:text-sm">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#ed2124] text-white shadow-md transition-transform duration-300 group-hover:scale-110 sm:h-8 sm:w-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.5 1.21l-2.26 1.13a11 11 0 005 5l1.13-2.26a1 1 0 011.21-.5l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z" />
+                                </svg>
+                            </span>
+                            <span class="hidden sm:inline">+971-542791581</span>
+                        </a>
+                        <a href="#quote" class="contact-pill group inline-flex items-center gap-2 px-1 py-2 whitespace-nowrap rounded-full border border-white/20 bg-white/10 px-2.5 py-1.5 text-[11px] font-medium text-white shadow-lg shadow-black/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 sm:px-4 sm:py-2 sm:text-sm">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#ed2124] text-white shadow-md transition-transform duration-300 group-hover:scale-110 sm:h-8 sm:w-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </span>
+                            <span>Get A Free Quote</span>
+                        </a>
+
+                        <!-- <a href="mailto:info@bigleap.ae"
+                            class="contact-pill group inline-flex items-center gap-2 px-1 py-2 whitespace-nowrap rounded-full border border-white/20 bg-white/10 px-2.5 py-1.5 text-[11px] font-medium text-white shadow-lg shadow-black/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 sm:px-4 sm:py-2 sm:text-sm">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#ed2124] text-white shadow-md transition-transform duration-300 group-hover:scale-110 sm:h-8 sm:w-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </span>
+                            <span class="hidden sm:inline">info@bigleap.ae</span>
+                        </a> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Video (fills the hero) -->
+        <video src="img/ninja-indroduction-video.webm" autoplay muted loop playsinline preload="auto"
+            class="absolute inset-0 h-full w-full object-cover"></video>
+        <!-- <video src="img/Bigleap_Intro.mp4" autoplay muted loop playsinline
+            class="absolute inset-0 h-full w-full object-cover"></video> -->
+
+        <!-- Readability overlays -->
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/40"></div>
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
+
+        <!-- Hero content overlay -->
+        <div class="absolute inset-0 z-10 flex items-end pb-[60px]">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="relative max-w-3xl bg-white/2 md:bg-white/3 py-8 pl-5 pr-6 text-center text-white shadow-lg shadow-black/10 backdrop-blur-none backdrop-blur-md sm:py-10 sm:pl-7 sm:pr-10 sm:text-left">
+                    <h1 class="relative font-fancy uppercase text-3xl leading-[1.15] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)] sm:text-3xl lg:text-4xl xl:text-5xl">
+                        Make your brand
+                        <span class="mt-1 block text-[#ed2124] sm:mt-0 sm:inline">
+                            move and resonate
+                        </span>
+                    </h1>
+                    <h2 class="font-fancy text-1xl mt-2 lg:text-2xl"> Your Brand's Tale Begins Here </h2>
+                    <p class="relative mx-auto mt-5 leading-relaxed text-white/85 drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
+                        2D & 3D Animation || Product Animation || Product Explainer Video || Character Design 
+
+                    </p>
+                    <div class="mobile-button relative mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
+                        <a href="#quote"
+                            class="inline-flex items-center justify-center rounded-full border border-white/50 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(255,255,255,0.12)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/20 hover:shadow-[0_0_32px_rgba(255,255,255,0.22)]">
+                            Get A Free Quote
+                        </a>
+                        <a href="#quote"
+                            class="inline-flex items-center justify-center rounded-full bg-[#ed2124] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(237,33,36,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ff2a2d] hover:shadow-[0_0_42px_rgba(237,33,36,0.8)]">
+                            Connect Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero -->
+     <!-- About Section -->
+     <section id="about" class="relative overflow-hidden bg-cover bg-center bg-no-repeat py-10 sm:py-14 xl:py-2"
+        style="background-image: url('img/busines.webp');">
+        <div class="container relative mx-auto px-4 sm:px-6">
+            <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+
+                <!-- Left: content -->
+                <div class="text-center lg:text-left"> 
+                    <h2 class="mt-3 text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
+                        Your Brand Story Into Dynamic 
+                        <span class="text-[#ed2124]">2D &amp; 3D</span>
+                        Animations 
+                    </h2>
+                    <p class="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-[#ed2124] sm:text-base lg:mx-0">
+                        Tell your story in 2D & 3D animations. Build a sophisticated vision for your brand with captivating product explainer videos and corporate animation videos. 
+                    </p>
+                    <div class="mobile-button mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start">
+                        <a href="#quote"
+                            class="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-gray-900 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-50">
+                            Share Your Vision
+                        </a>
+                        <a href="#quote"
+                            class="inline-flex items-center justify-center gap-2 rounded-full bg-gray-900 px-7 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z" />
+                            </svg>
+                            Contact Our Experts
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: illustration -->
+                <div class="relative mx-auto w-full max-w-lg lg:max-w-none">
+                    <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" class="h-auto w-full drop-shadow-2xl" role="img" aria-label="Rocket launch illustration">
+                        <defs>
+                            <linearGradient id="flameGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#fde047" />
+                                <stop offset="60%" stop-color="#fb923c" />
+                                <stop offset="100%" stop-color="#ed2124" />
+                            </linearGradient>
+                            <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#ffffff" />
+                                <stop offset="100%" stop-color="#e2e8f0" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- soft glow -->
+                        <circle cx="260" cy="200" r="150" fill="#ffffff" fill-opacity="0.08">
+                            <animate attributeName="r" values="150;160;150" dur="4s" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- twinkling stars -->
+                        <g fill="#ffffff">
+                            <circle cx="90" cy="90" r="3"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite" /></circle>
+                            <circle cx="430" cy="70" r="4"><animate attributeName="opacity" values="1;0.2;1" dur="2.6s" repeatCount="indefinite" /></circle>
+                            <circle cx="460" cy="250" r="3"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" /></circle>
+                            <circle cx="70" cy="300" r="4"><animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite" /></circle>
+                            <circle cx="150" cy="60" r="2.5"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.9s" repeatCount="indefinite" /></circle>
+                        </g>
+
+                        <!-- orbiting shapes -->
+                        <g>
+                            <animateTransform attributeName="transform" type="rotate" from="0 260 200" to="360 260 200" dur="16s" repeatCount="indefinite" />
+                            <rect x="395" y="150" width="18" height="18" rx="4" fill="#fb923c" transform="rotate(20 404 159)" />
+                            <circle cx="110" cy="230" r="9" fill="#0d9488" />
+                        </g>
+                        <g>
+                            <animateTransform attributeName="transform" type="rotate" from="360 260 200" to="0 260 200" dur="20s" repeatCount="indefinite" />
+                            <path d="M140 150 l12 20 h-24 Z" fill="#facc15" />
+                        </g>
+
+                        <!-- rocket (gentle bob) -->
+                        <g>
+                            <animateTransform attributeName="transform" type="translate" values="0 0; 0 -10; 0 0" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" keyTimes="0;0.5;1" />
+
+                            <!-- flame (flicker, anchored at nozzle) -->
+                            <g transform="translate(260 250)">
+                                <g>
+                                    <animateTransform attributeName="transform" type="scale" values="1 1;1 0.78;1 1.08;1 1" dur="0.5s" repeatCount="indefinite" />
+                                    <path d="M0 50 q-18 0 -18 -26 q0 -28 18 -52 q18 24 18 52 q0 26 -18 26 Z" fill="url(#flameGrad)" />
+                                    <path d="M0 40 q-9 0 -9 -16 q0 -16 9 -30 q9 14 9 30 q0 16 -9 16 Z" fill="#fff7cd" fill-opacity="0.9" />
+                                </g>
+                            </g>
+
+                            <!-- fins -->
+                            <path d="M232 230 q-26 12 -26 44 q22 -4 30 -20 Z" fill="#ed2124" />
+                            <path d="M288 230 q26 12 26 44 q-22 -4 -30 -20 Z" fill="#ed2124" />
+
+                            <!-- body -->
+                            <path d="M260 96 q34 36 34 96 q0 44 -34 60 q-34 -16 -34 -60 q0 -60 34 -96 Z" fill="url(#bodyGrad)" />
+                            <!-- nose -->
+                            <path d="M260 96 q22 24 28 60 h-56 q6 -36 28 -60 Z" fill="#ed2124" />
+                            <!-- window -->
+                            <circle cx="260" cy="178" r="18" fill="#0d9488" />
+                            <circle cx="260" cy="178" r="18" fill="none" stroke="#94a3b8" stroke-width="4" />
+                            <circle cx="254" cy="172" r="5" fill="#ffffff" fill-opacity="0.7" />
+                            <!-- bottom band -->
+                            <path d="M226 252 q34 16 68 0 v6 q-34 16 -68 0 Z" fill="#cbd5e1" />
+                        </g>
+
+                        <!-- launch smoke -->
+                        <g fill="#ffffff" fill-opacity="0.85">
+                            <circle cx="240" cy="350" r="16"><animate attributeName="cy" values="350;366" dur="2.5s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.85;0" dur="2.5s" repeatCount="indefinite" /></circle>
+                            <circle cx="280" cy="356" r="14"><animate attributeName="cy" values="356;372" dur="2.8s" begin="0.3s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.85;0" dur="2.8s" begin="0.3s" repeatCount="indefinite" /></circle>
+                            <circle cx="260" cy="360" r="20"><animate attributeName="cy" values="360;378" dur="3s" begin="0.6s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.8;0" dur="3s" begin="0.6s" repeatCount="indefinite" /></circle>
+                        </g>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+     </section>
+     <!-- End About Section -->
+      <!-- About story section -->
+      <section id="about-story" class="bg-white py-14 sm:py-20">
+        <div class="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+
+            <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10 xl:gap-14">
+
+                <!-- Left: illustration -->
+                <div class="flex justify-center lg:justify-end lg:pr-2 xl:pr-6">
+                    <img
+                        src="./img/Scating-ninja-about.avif"
+                        alt="Scating Ninja"
+                        class="h-auto w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl"
+                    >
+                </div>
+
+                <!-- Right: brand + copy -->
+                <div class="sm:text-left">
+                    <img
+                        src="./img/bigleap-clr-logo.png"
+                        alt="BigLeap Logo"
+                        class="h-auto w-auto max-w-[200px] sm:max-w-[240px]"
+                    >
+
+                    <div class="mt-5 lg:mt-6 lg:border-l lg:border-gray-200 lg:pl-8 xl:pl-12">
+                        <h2 class="text-xl font-bold text-gray-900 sm:text-2xl lg:text-3xl">
+                            About Us
+                        </h2>
+                        <p class="mt-4 max-w-none text-sm leading-relaxed text-gray-600 sm:text-base lg:text-[1.05rem]">
+                            We're a creative animation company specialised in helping brands around the globe reach
+                            their target audiences through 2D and 3D animation services along with product explainer videos that
+                            resonate with your brand aesthetic and reflect your message. At Big Leap, we do more than just
+                            animated videos; we build narratives that creatively represent your vision. We blend creativity
+                            with purpose and have a dynamic team that will guide you each step of the way to build your
+                            brand identity brick by brick. We evolve along with the changing trends, adapting to innovations
+                            and expanding our expertise in animated video production.
+                        </p>
+                        <p class="mt-4 max-w-none text-sm leading-relaxed text-gray-600 sm:text-base lg:text-[1.05rem]">
+                            With 360-degree 2D & 3D animation services, we've got you covered from start to finish.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+         
+        </div> 
+           <!-- Button Section -->
+           <div class="attractive-cta mobile-button items-center justify-center sm:justify-center"> 
+            <a href="#quote" class="attractive-btn attractive-btn--primary mt-2 md:mt-10">
+                <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                Get A Free Quote
+            </a>
+          </div>
+        <!-- Button Section --> 
+    </section>
+    <!-- End About story section -->
+
+    <!-- Our Count section -->
+     <section class="count-bg relative overflow-hidden py-16 sm:py-24">
+        <!-- decorative glows -->
+        <div class="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-red-600/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-orange-500/10 blur-3xl"></div>
+
+        <div class="container relative mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+
+                <!-- Left box -->
+                <div class="text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-red-400 backdrop-blur-sm sm:text-sm">
+                        <span class="h-1.5 w-1.5 rounded-full bg-[#ed2124]"></span>
+                        Our Numbers
+                    </span>
+                    <h2 class="mt-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+                        We Let Our
+                        <span class="text-[#ed2124]">Results </span>
+                        Speak 
+                    </h2>
+                    <p class="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base lg:mx-0">
+                        Bringing you the creative brand positioning your company needs with 2D & 3D animation services. 
+                    </p>
+                    <div class="mobile-button mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                        <a href="#quote"
+                            class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ed2124] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-[#ed2124]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[#ed2124]/50 sm:w-auto">
+                            Start Your Project
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right box: stat cards -->
+                <div class="grid grid-cols-2 gap-3 sm:gap-5">
+                 
+                    <!-- Projects -->
+                    <div class="stat-card group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 text-center shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-red-400/40 hover:bg-white/10 sm:p-7">
+                        <span class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[#ed2124] text-white shadow-lg shadow-[#ed2124]/20 sm:h-12 sm:w-12">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </span>
+                        <span class="count-num block text-3xl font-extrabold text-white sm:text-4xl" data-count-to="105" data-suffix="+">+</span>
+                        <span class="mt-1.5 block text-xs text-white/70 sm:text-sm">Projects </span>
+                    </div>
+                    <!-- UAE Projects -->
+                    <div class="stat-card group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 text-center shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-red-400/40 hover:bg-white/10 sm:p-7">
+                        <span class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[#ed2124] text-white shadow-lg shadow-[#ed2124]/20 sm:h-12 sm:w-12">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </span>
+                        <span class="count-num block text-3xl font-extrabold text-white sm:text-4xl" data-count-to="65" data-suffix="+">0+</span>
+                        <span class="mt-1.5 block text-xs text-white/70 sm:text-sm">Clients</span>
+                    </div>
+                    <!-- Satisfaction -->
+                    <div class="stat-card group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 text-center shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-red-400/40 hover:bg-white/10 sm:p-7">
+                        <span class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[#ed2124] text-white shadow-lg shadow-[#ed2124]/20 sm:h-12 sm:w-12">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                        </span>
+                        <span class="count-num block text-3xl font-extrabold text-white sm:text-4xl" data-count-to="10" data-suffix="+">0+</span>
+                        <span class="mt-1.5 block text-xs text-white/70 sm:text-sm"> Countries Served  </span>
+                    </div>
+                       <!-- Years -->
+                       <div class="stat-card group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 text-center shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-red-400/40 hover:bg-white/10 sm:p-7">
+                        <span class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[#ed2124] text-white shadow-lg shadow-[#ed2124]/20 sm:h-12 sm:w-12">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                            </svg>
+                        </span>
+                        <span class="count-num block text-3xl font-extrabold text-white sm:text-4xl" data-count-to="30" data-suffix="+">0+</span>
+                        <span class="mt-1.5 block text-xs text-white/70 sm:text-sm">Professionals </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+     </section>
+    <!-- Our End-Count section -->
+     <!-- Our services section -->
+     <section id="what-we-offer" class="bg-white py-14 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <!-- Heading -->
+            <div class="mx-auto mb-10 max-w-2xl text-center sm:mb-14">
+                <span class="inline-block text-xs font-semibold uppercase tracking-widest text-[#ed2124] sm:text-sm">
+                    Core services
+                </span>
+                <h2 class="mt-3 text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
+                    Our Creative
+                    <span class="text-[#ed2124]">Services</span>
+                </h2>
+                <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-gray-500 sm:text-base">
+                    From 2D & 3D animation to product explainer videos, we craft stories that captivate audiences and elevate your brand.
+                </p>
+            </div>
+
+            <!-- Slider -->
+            <div id="serviceSlider" class="relative">
+                <!-- viewport -->
+                <div class="service-viewport overflow-hidden">
+                    <div id="serviceTrack" class="flex transition-transform duration-500 ease-out">
+                        <!-- slides injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Arrows -->
+                <button type="button" data-slider-prev aria-label="Previous services"
+                    class="group absolute -left-2 top-[38%] z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-lg transition-all duration-300 hover:-translate-y-1/2 hover:scale-105 hover:border-[#ed2124]/40 hover:text-[#ed2124] disabled:cursor-not-allowed disabled:opacity-40 sm:flex lg:-left-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button type="button" data-slider-next aria-label="Next services"
+                    class="group absolute -right-2 top-[38%] z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-lg transition-all duration-300 hover:-translate-y-1/2 hover:scale-105 hover:border-[#ed2124]/40 hover:text-[#ed2124] disabled:cursor-not-allowed disabled:opacity-40 sm:flex lg:-right-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Dots -->
+            <div id="serviceDots" class="mt-8 flex flex-wrap items-center justify-center gap-2"></div>
+
+                       <!-- Button Section -->
+           <div class="attractive-cta mobile-button items-center justify-center sm:justify-center"> 
+            <a href="#quote" class="attractive-btn attractive-btn--primary mt-2 md:mt-10">
+                <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                Get Started Today
+            </a>
+          </div>
+        <!-- Button Section --> 
+        </div>
+     </section>
+     <!-- Our End-services section -->
+      
+      <!-- Our portfolio / industries section -->
+      <section id="portfolio" class="portfolio-bg relative overflow-hidden py-16 sm:py-24">
+        <!-- decorative glows -->
+        <div class="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-orange-600/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-20 top-1/3 h-80 w-80 rounded-full bg-red-600/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl"></div>
+
+        <div class="container relative mx-auto px-4 sm:px-6">
+            <!-- Heading -->
+            <div class="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
+                <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#ed2124] backdrop-blur-sm sm:text-sm">
+                    Main industries we serve
+                </span>
+                <h2 class="mt-5 text-3xl font-extrabold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
+                    3D For Every
+                    <span class="text-[#ed2124]">Industry</span>
+                </h2>
+                <p class="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
+                    Whether you need a fully managed production team or direct access to specialist talent,
+                     our platform combines experienced producers with a global network of vetted creatives.
+                      We assemble the right team for your project and deliver on-time and on-budget.
+                </p>
+            </div>
+
+            <!-- Industries grid -->
+            <div id="indGrid" class="flex flex-wrap justify-center gap-6 sm:gap-8"></div>
+
+                       <!-- Button Section -->
+           <div class="attractive-cta mobile-button items-center justify-center sm:justify-center"> 
+            <a href="#quote" class="attractive-btn attractive-btn--primary mt-2 md:mt-10">
+                <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                Get Your Pricing
+            </a>
+          </div>
+        <!-- Button Section --> 
+        </div>
+     </section>
+     <!-- Our End-portfolio section -->  
+
+<!-- Main offers Section -->
+ <section id="offers" class="offers-bg relative overflow-hidden py-16 sm:py-24">
+    <div class="container relative z-10 mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+
+            <!-- Content -->
+            <div class="offer-reveal">
+                <span class="offer-kicker"> Main Offers</span>
+                <h2 class="offer-title">
+                    Tailored Animation Videos  <br class="hidden sm:block">
+                    <span class="grad"> that Rejuvenate Your Brand Image  </span>
+                </h2>
+                <p class="offer-lead">
+                    You can rely on our premium animation solutions for every branding material,
+                     from corporate animation video, character animation, and 2D animation to product explainer videos and 3D animation
+
+                </p>
+
+                <div class="offer-features">
+                    <div class="offer-feature">
+                        <span class="offer-feature-ico"><i class="fa-solid fa-play"></i></span>
+                        <div>
+                            <h4>Free Demo Video</h4>
+                            <p> See for yourself and understand our capabilities. Get a glimpse of what our scope of work can bring to your branding objectives.    </p>
+                        </div>
+                    </div>
+                    <div class="offer-feature">
+                        <span class="offer-feature-ico"><i class="fa-solid fa-gear"></i></span>
+                        <div>
+                            <h4>100% Customization</h4>
+                            <p> From the beginning of the work until the finished product, you stay in full creative control. Our team works according to your
+                                 feedback every step of the way to ensure all your objectives are achieved.  </p>
+                        </div>
+                    </div>
+                    <div class="offer-feature">
+                        <span class="offer-feature-ico"><i class="fa-solid fa-headset"></i></span>
+                        <div>
+                            <h4>24/7 Support</h4>
+                            <p> Whether it's a product launch or a quick question, our support team is ready to assist you around the clock.  </p>
+                        </div>
+                    </div>
+                </div>
+
+                           <!-- Button Section -->
+           <div class="attractive-cta mobile-button items-center justify-start"> 
+            <a href="#quote" class="attractive-btn attractive-btn--ghost border-gray-200 text-gray-700 mt-2 md:mt-10">
+                <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                Get A Free Quote
+            </a>
+          </div>
+        <!-- Button Section --> 
+            </div>
+
+            <!-- Visual -->
+            <div class="offer-reveal order-1 lg:order-2">
+                <div class="offer-visual aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
+                    <img src="./img/About-us-ninja .webp" alt="BigLeap animation studio character" loading="lazy">
+                    <div class="offer-badge">
+                        <span class="num">5+</span>
+                        <span class="lbl">Years of<br>creative magic</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+ </section>
+<!-- Main offers Section -->
+
+<!-- Trusted Clients Section -->
+<section id="trusted-clients" class="trusted-clients-bg relative overflow-hidden py-16 sm:py-24">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="tc-head">
+            <span class="offer-kicker">Our Partners</span>
+            <h2> Trusted Clients </h2>
+            <p class="tc-sub">We're proud to collaborate with industry-leading brands around the world who trust us to deliver excellence.</p>
+        </div>
+        <div class="tc-grid grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9">
+            <div class="client-item">
+                <img src="./img/clients/yesmachinery.avif" alt="Yes Machinery logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/alshurooq.avif" alt="Al Shurooq logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/seek.avif" alt="Seek logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/biax.avif" alt="Biax logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/flaig.avif" alt="Flaig logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/gullco.avif" alt="Gullco logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/mvt.avif" alt="MVT logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/Omca.avif" alt="Omca logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/injas.avif" alt="Injas logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/flexlift.avif" alt="Flexlift logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/dibo.avif" alt="Dibo logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/giffin.avif" alt="Giffin logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/mtech.avif" alt="M-Tech logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/yesauto.avif" alt="Yes Automation logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/group.avif" alt="Group logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/kistler.avif" alt="Kistler logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/mg.avif" alt="MG logo" loading="lazy">
+            </div>
+            <div class="client-item">
+                <img src="./img/clients/anket.avif" alt="Anket logo" loading="lazy">
+            </div> 
+        </div>
+    </div>
+  
+</section>
+<!-- Trusted Clients Section -->
+
+<!-- Testimonials new section -->
+<section id="testimonials-new" class="testimonials-new-bg relative overflow-hidden py-16 sm:py-24">
+    <span class="tn-orb tn-orb--orange" aria-hidden="true"></span>
+    <span class="tn-orb tn-orb--red" aria-hidden="true"></span>
+
+    <div class="relative z-10 container mx-auto px-4 sm:px-6">
+        <div class="testimonials-new-head">
+            <span class="offer-kicker">Testimonials</span>
+            <h2>What Our <span class="tn-grad">Clients Say</span></h2>
+            <p class="tn-sub">Real words from the brands we've partnered with — their stories speak louder than ours.</p>
+        </div>
+
+        <div id="tnSlider" class="tn-slider-wrap mt-10 sm:mt-14">
+            <div class="tn-slider relative">
+                <button type="button" data-slider-prev aria-label="Previous testimonial"
+                    class="tn-arrow tn-arrow--desk tn-arrow--prev group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <div class="tn-viewport overflow-hidden">
+                    <div id="tnTrack" class="flex transition-transform duration-500 ease-out">
+                        <!-- slides injected by JS -->
+                    </div>
+                </div>
+
+                <button type="button" data-slider-next aria-label="Next testimonial"
+                    class="tn-arrow tn-arrow--desk tn-arrow--next group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="tn-controls">
+                <button type="button" data-slider-prev aria-label="Previous testimonial"
+                    class="tn-arrow tn-arrow--mob tn-arrow--prev group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <div id="tnDots" class="tn-dots flex flex-wrap items-center justify-center gap-2"></div>
+                <button type="button" data-slider-next aria-label="Next testimonial"
+                    class="tn-arrow tn-arrow--mob tn-arrow--next group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonials new End section -->
+ 
+<!-- Youtube section -->
+<section id="youtube" class="youtube-bg relative overflow-hidden py-16 sm:py-24">
+    <span class="yt-orb yt-orb--orange" aria-hidden="true"></span>
+    <span class="yt-orb yt-orb--red" aria-hidden="true"></span>
+    <span class="yt-orb yt-orb--center" aria-hidden="true"></span>
+
+    <div class="relative z-10 container mx-auto px-4 sm:px-6">
+        <div class="youtube-head">
+            <span class="offer-kicker">Our Work</span>
+            <h2>Video <span class="yt-grad">Portfolio</span></h2>
+            <p class="yt-sub">Explore our latest animation projects — from character design to product explainers, see how we bring ideas to life.</p>
+        </div>
+        <div class="youtube-grid mt-12 sm:mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+           
+                <button type="button" class="youtube-card" data-yt-open data-yt-id="qUlPIcHXl_U" aria-label="Play Meet Jack, the new Mascot of M.tech">
+                    <div class="youtube-card-thumb">
+                        <img src="https://img.youtube.com/vi/qUlPIcHXl_U/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+                        <span class="youtube-card-play" aria-hidden="true">
+                            <span class="youtube-card-play-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="youtube-card-body">
+                        <h3 class="youtube-card-title">Meet Jack, the new Mascot of M.tech, brought to life by Big Leap</h3>
+                        <p class="youtube-card-desc">Character mascot animation for M.tech.</p>
+                    </div>
+                </button>
+          
+          
+                <button type="button" class="youtube-card" data-yt-open data-yt-id="Li2mhnCfPlY" aria-label="Play Neo Intro Video">
+                    <div class="youtube-card-thumb">
+                        <img src="https://img.youtube.com/vi/Li2mhnCfPlY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+                        <span class="youtube-card-play" aria-hidden="true">
+                            <span class="youtube-card-play-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="youtube-card-body">
+                        <h3 class="youtube-card-title">Neo Intro Video</h3>
+                        <p class="youtube-card-desc">Intro animation for YES Machinery Neo.</p>
+                    </div>
+                </button> 
+          
+           
+                <button type="button" class="youtube-card" data-yt-open data-yt-id="4zwcpkwqmqw" data-yt-start="1" aria-label="Play BIAX Deburring Spindles with Radial Deflection">
+                    <div class="youtube-card-thumb">
+                        <img src="https://img.youtube.com/vi/4zwcpkwqmqw/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+                        <span class="youtube-card-play" aria-hidden="true">
+                            <span class="youtube-card-play-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="youtube-card-body">
+                        <h3 class="youtube-card-title">BIAX Deburring Spindles with Radial Deflection</h3>
+                        <p class="youtube-card-desc">Product animation &amp; 3D visualization for industrial tooling.</p>
+                    </div>
+                </button>
+       
+        
+                <button type="button" class="youtube-card" data-yt-open data-yt-id="q0Wvxyk2JEw" data-yt-start="2" aria-label="Play Permanent Lasthebemagnete FX by Flaig Magnetsysteme">
+                    <div class="youtube-card-thumb">
+                        <img src="https://img.youtube.com/vi/q0Wvxyk2JEw/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+                        <span class="youtube-card-play" aria-hidden="true">
+                            <span class="youtube-card-play-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="youtube-card-body">
+                        <h3 class="youtube-card-title">Permanent Lasthebemagnete FX by Flaig Magnetsysteme</h3>
+                        <p class="youtube-card-desc">3D product visualization for lifting magnet systems.</p>
+                    </div>
+                </button>
+          </div> 
+     <!-- Button Section -->
+     <div class="attractive-cta mobile-button items-center justify-center sm:justify-center">
+        <a href="#quote" class="attractive-btn attractive-btn--ghost">
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            Let's Get Started
+        </a>
+        <a href="#quote" class="attractive-btn attractive-btn--primary">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Get in Touch
+        </a>
+      </div>
+    <!-- Button Section --> 
+    </div>
+</section>
+
+<!-- YouTube video popup -->
+<div id="ytModal" class="yt-modal" hidden aria-hidden="true">
+    <div class="yt-modal-backdrop" data-yt-close></div>
+    <div class="yt-modal-dialog" role="dialog" aria-modal="true" aria-label="Video player">
+        <button type="button" class="yt-modal-close" data-yt-close aria-label="Close video">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="yt-modal-video"></div>
+    </div>
+</div>
+<!-- Youtube End section -->
+
+<!-- Quote enquiry popup -->
+<div id="quoteModal" class="quote-modal" hidden aria-hidden="true">
+    <div class="quote-modal-backdrop" data-quote-close></div>
+    <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+        <button type="button" class="quote-modal-close" data-quote-close aria-label="Close quote form">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div class="quote-modal-layout">
+            <aside class="quote-modal-aside" aria-hidden="true">
+                <div class="quote-modal-aside-inner">
+                    <span class="quote-modal-badge">Free Consultation</span>
+                    <h2 class="quote-modal-aside-title" id="quoteModalTitle">Get Your Free Quote</h2>
+                    <p class="quote-modal-aside-text">Tell us about your project and our animation experts will craft a tailored proposal for you.</p>
+                    <ul class="quote-modal-perks">
+                        <li>
+                            <span class="quote-modal-perk-ico" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            </span>
+                            Response within 24 hours
+                        </li>
+                        <li>
+                            <span class="quote-modal-perk-ico" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            </span>
+                            Free demo video available
+                        </li>
+                        <li>
+                            <span class="quote-modal-perk-ico" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            </span>
+                            No obligation, 100% confidential
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="quote-modal-body">
+                <div class="quote-modal-mobile-head">
+                    <span class="quote-modal-badge">Free Consultation</span>
+                    <h2 class="quote-modal-mobile-title">Get Your Free Quote</h2>
+                    <p class="quote-modal-mobile-text">Fill in your details and we'll get back to you shortly.</p>
+                </div>
+
+                <form id="quoteForm" class="quote-form" novalidate>
+                    <div class="quote-form-grid">
+                        <div class="quote-field quote-field--full">
+                            <label for="quoteFirstName">Full Name <span aria-hidden="true">*</span></label>
+                            <input type="text" id="quoteFirstName" name="firstName" placeholder="John Doe" required autocomplete="name" minlength="2" maxlength="100">
+                        </div> 
+                        <div class="quote-field">
+                            <label for="quoteEmail">Email <span aria-hidden="true">*</span></label>
+                            <input type="email" id="quoteEmail" name="email" placeholder="john@company.com" required autocomplete="email" maxlength="254">
+                        </div>
+                        <div class="quote-field">
+                            <label for="quoteMobile">Mobile Number <span aria-hidden="true">*</span></label>
+                            <input type="tel" id="quoteMobile" name="mobile" placeholder="+971 50 000 0000" required autocomplete="tel" inputmode="tel" maxlength="20">
+                        </div> 
+                        <div class="quote-field quote-field--full">
+                            <label for="quoteMessage">Message <span aria-hidden="true"></span></label>
+                            <textarea id="quoteMessage" name="message" rows="3" placeholder="Tell us about your animation project, timeline, and goals..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="quote-submit">
+                        <span class="quote-submit-text">Send Enquiry</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="quote-submit-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </button>
+                </form>
+
+                <div id="quoteSuccess" class="quote-success" hidden>
+                    <span class="quote-success-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </span>
+                    <h3 class="quote-success-title">Thank You!</h3>
+                    <p class="quote-success-text">Your enquiry has been received. Our team will contact you within 24 hours.</p>
+                    <button type="button" class="quote-success-btn" data-quote-close>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Quote popup end -->
+
+<!-- FAQ Section -->
+<section id="faq" class="faq-bg">
+    <span class="faq-glow faq-glow--left" aria-hidden="true"></span>
+    <span class="faq-glow faq-glow--right" aria-hidden="true"></span>
+
+    <div class="container faq-wrap">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+
+        <div class="faq-grid grid grid-cols-1 gap-10 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
+            <article class="faq-card shadow-lg shadow-[#ed2124]/15 ring-1 ring-[#ed2124]/5 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ed2124]/30 hover:ring-[#ed2124]/20 focus-within:shadow-2xl focus-within:shadow-[#ed2124]/30 focus-within:ring-[#ed2124]/20" tabindex="0">
+                <h3 class="faq-q">What animation services do you offer?</h3>
+                <div class="faq-panel">
+                    <p class="faq-a">At Bigleap, we provide end-to-end <strong class="faq-highlight">animation services</strong>, from storyboarding and pre-production to 2D and 3D animation, product explainers, and post-production — our animation services cover the entire project.</p>
+                </div>
+            </article>
+
+            <article class="faq-card shadow-lg shadow-[#ed2124]/15 ring-1 ring-[#ed2124]/5 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ed2124]/30 hover:ring-[#ed2124]/20 focus-within:shadow-2xl focus-within:shadow-[#ed2124]/30 focus-within:ring-[#ed2124]/20" tabindex="0">
+                <h3 class="faq-q">How do animated videos help in business branding?</h3>
+                <div class="faq-panel">
+                    <p class="faq-a">Animated videos boost brand recall, simplify complex messaging, and create emotional connections — helping your business stand out across social media, websites, and presentations with a memorable visual identity.</p>
+                </div>
+            </article>
+
+            <article class="faq-card shadow-lg shadow-[#ed2124]/15 ring-1 ring-[#ed2124]/5 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ed2124]/30 hover:ring-[#ed2124]/20 focus-within:shadow-2xl focus-within:shadow-[#ed2124]/30 focus-within:ring-[#ed2124]/20" tabindex="0">
+                <h3 class="faq-q">How long does it take to create an animation video?</h3>
+                <div class="faq-panel">
+                    <p class="faq-a">Production time depends on scope and style. A short explainer typically takes 2–4 weeks, while full 3D campaigns can run 6–12 weeks from concept and storyboard through to final delivery.</p>
+                </div>
+            </article>
+
+            <article class="faq-card shadow-lg shadow-[#ed2124]/15 ring-1 ring-[#ed2124]/5 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ed2124]/30 hover:ring-[#ed2124]/20 focus-within:shadow-2xl focus-within:shadow-[#ed2124]/30 focus-within:ring-[#ed2124]/20" tabindex="0">
+                <h3 class="faq-q">How much does it cost to produce a video?</h3>
+                <div class="faq-panel">
+                    <p class="faq-a">Cost varies by animation style, duration, and complexity. We offer flexible packages and a free demo video so you can see our quality before committing — reach out for a tailored quote.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<!-- FAQ Section -->
+
+<!-- How it work section  -->
+ <section id="how-it-work">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="testimonials-new-head">
+            <span class="offer-kicker"> How it works</span>
+            <h2>  How it  <span class="tn-grad"> works </span></h2>
+            <p class="tn-sub">Real words from the brands we've partnered with — their stories speak louder than ours.</p>
+        </div> 
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xl:gap-12 mt-12">
+            <div class="hiw-col">
+                <h3 class="hiw-col-title">Creative</h3>
+                <div class="hiw-steps">
+                    <div class="hiw-step">
+                        <span class="hiw-step-ico"><i class="fa-solid fa-lightbulb"></i></span>
+                        <div>
+                            <h4>Conceptualization</h4>
+                            <p> This stage involves brainstorming ideas and creating a basic concept outline that aligns with your vision.  </p>
+                        </div>
+                    </div>
+                    <div class="hiw-step">
+                        <span class="hiw-step-ico"><i class="fa-solid fa-pen-nib"></i></span>
+                        <div>
+                            <h4>Scriptwriting</h4>
+                            <p> We craft a clear, engaging script that conveys the story or message concisely during on-screen actions. </p>
+                        </div>
+                    </div>
+                    <div class="hiw-step">
+                        <span class="hiw-step-ico"><i class="fa-solid fa-film"></i></span>
+                        <div>
+                            <h4>Storyboarding</h4>
+                          <p> Storyboarding involves creating a visual layout of each scene to be passed on to animators before production. </p>
+                        </div>
+                    </div>
+                    <div class="hiw-step">
+                        <span class="hiw-step-ico"><i class="fa-solid fa-palette"></i></span>
+                        <div>
+                            <h4>Design</h4>
+                           <p> Choose colour schemes, character designs, & other elements representing the look & feel of the animation. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hiw-col">
+                <h3 class="hiw-col-title">Production</h3>
+                <div class="hiw-steps">
+                    <div class="hiw-step">
+                        <span class="hiw-step-ico"><i class="fa-solid fa-microphone"></i></span>
+                        <div>
+                            <h4>Voiceover</h4>
+                           <p> The team then records the voiceover based on the script, ensuring it aligns with the animation's tone. </p>
+                        </div>
+                    </div>
+                    <div class="hiw-step">
+                        <span class="hiw-step-ico"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <div>
+                            <h4>Animation</h4>
+                         <p> Everything from motion design and character movements to transitions and visual effects to bring visuals to life. </p>
+                        </div>
+                    </div>
+                    <div class="hiw-step">
+                        <span class="hiw-step-ico"><i class="fa-solid fa-music"></i></span>
+                        <div>
+                            <h4>Audio</h4>
+                          <p> Add music, sound effects, and any additional audio elements that enhance the animation's mood and impact. </p>
+                        </div>
+                    </div>
+                    <div class="hiw-step">
+                        <span class="hiw-step-ico"><i class="fa-solid fa-circle-check"></i></span>
+                        <div>
+                            <h4>Finalization</h4>
+                         <p> Review the animated video, make any necessary adjustments, and finalise it for export and sharing. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                  <!-- Button Section -->
+                  <div class="attractive-cta mobile-button items-center justify-center sm:justify-center"> 
+                    <a href="#quote" class="attractive-btn attractive-btn--primary mt-2 md:mt-10">
+                        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                        Request a Free Quote
+                    </a>
+                  </div>
+                <!-- Button Section --> 
+    </div>
+ </section>
+<!-- How it work section  -->
+
+<!-- attractive section -->
+<section id="attractive" class="attractive-bg relative overflow-hidden py-16 sm:py-20 lg:py-24">
+    <span class="attractive-glow attractive-glow--orange" aria-hidden="true"></span>
+    <span class="attractive-glow attractive-glow--red" aria-hidden="true"></span>
+
+    <div class="container relative z-10 mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20">
+
+            <!-- Content -->
+            <div class="offer-reveal attractive-content order-2 lg:order-1">
+                <span class="offer-kicker attractive-kicker">Work With Us</span>
+                <h2 class="offer-title attractive-title">
+                    Seeing Your Future Brand Already?
+                    <span class="grad"> Let’s make it a reality with the right team! </span>
+                </h2>
+                <p class="offer-lead attractive-lead">
+                    We believe in creatively aligning with every entrepreneur’s dream. You build a vision,
+                     and we give it colours through our exceptional team and our advanced animation services.
+                      Whether it’s an explainer video, 3D animation, or character-driven storytelling, 
+                      our expert team is here to make it happen.
+
+                </p>
+
+                <ul class="attractive-tags" aria-label="What we offer">
+                    <li><i class="fa-solid fa-film" aria-hidden="true"></i> 2D &amp; 3D Animation</li>
+                    <li><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Free Demo Video</li>
+                    <li><i class="fa-solid fa-headset" aria-hidden="true"></i> 24/7 Support</li>
+                </ul>
+
+                <div class="attractive-cta  mobile-button">
+                    <a href="#quote" class="attractive-btn attractive-btn--ghost">
+                        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                        Get A Free Quote
+                    </a>
+                    <a href="#quote" class="attractive-btn attractive-btn--primary">
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                        Connect Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual -->
+            <div class="offer-reveal attractive-visual-wrap order-1 lg:order-2">
+                <div class="attractive-visual">
+                    <span class="attractive-visual-ring" aria-hidden="true"></span>
+                    <span class="attractive-visual-glow" aria-hidden="true"></span>
+                    <img src="./img/Resting-Ninja.webp" alt="BigLeap ninja mascot ready to help" loading="lazy" width="560" height="560">
+                    <div class="attractive-badge">
+                        <span class="attractive-badge-ico"><i class="fa-solid fa-star" aria-hidden="true"></i></span>
+                        <div>
+                            <span class="attractive-badge-num">105+</span>
+                            <span class="attractive-badge-lbl">Projects delivered<br>worldwide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- attractive section -->
+
+
+     <!-- Footer section --> 
+    <footer class="footer-bg text-white">
+        <!-- glow orbs -->
+        <span class="footer-glow footer-glow--orange"></span>
+        <span class="footer-glow footer-glow--red"></span>
+
+        <div class="relative z-10 container mx-auto px-5 py-4 sm:px-6 sm:py-10">
+            <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+
+                <!-- Brand / about -->
+                <div class="sm:col-span-2 lg:col-span-4">
+                    <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+                        We offer a full range of animation and production services, including 2D and 3D animation, VFX and motion graphics.
+                    </p>
+                    <!-- Newsletter -->
+                    <form class="mt-6 flex max-w-sm items-center gap-2" onsubmit="return false;">
+                        <div class="relative flex-1">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-[#ed2124]/60 focus:bg-white/10">
+                        </div>
+                        <button type="submit"
+                            class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#ed2124] text-white shadow-lg shadow-[#ed2124]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[#ed2124]/50">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                    </form>
+
+                      <!-- Social icons -->
+                      <div class="mt-6 flex items-center gap-3">
+                        <a href="https://www.facebook.com/bigleap.ae" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/bigleap.ae/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.15 0-3.522.012-4.764.069-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.057 1.242-.069 1.614-.069 4.764s.012 3.522.069 4.764c.045.975.207 1.504.344 1.857.182.467.398.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.242.057 1.614.069 4.764.069s3.522-.012 4.764-.069c.975-.045 1.504-.207 1.857-.344.467-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.057-1.242.069-1.614.069-4.764s-.012-3.522-.069-4.764c-.045-.975-.207-1.504-.344-1.857-.182-.467-.398-.8-.748-1.15-.35-.35-.683-.566-1.15-.748-.353-.137-.882-.3-1.857-.344-1.242-.057-1.614-.069-4.764-.069zm0 3.064A4.971 4.971 0 1012 17a4.971 4.971 0 000-9.971zm0 8.198A3.227 3.227 0 1112 8.773a3.227 3.227 0 010 6.454zm6.336-8.418a1.162 1.162 0 11-2.324 0 1.162 1.162 0 012.324 0z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/bigleapae-2/" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@big_leap_animations" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+ 
+                 <!-- Logo -->
+                 <div class="sm:col-span-2 lg:col-span-4 flex flex-col items-center justify-center text-center">
+                    <img src="./img/bigleap-logo-icon.webp" alt="BigLeap Logo" class="w-30 h-auto">
+                    <img src="./img/bigleap-logo-text.webp" alt="BigLeap Logo" class="w-50 h-auto">
+                 </div>
+                 <!-- Logo -->
+
+                <!-- Contact -->
+                <div class="sm:col-span-2 lg:col-span-3">
+                    <h3 class="footer-heading text-base font-semibold text-white">Contact</h3>
+                    <ul class="mt-6 space-y-4 text-sm">
+                        <li>
+                            <a href="https://maps.google.com/?q=Business+Bay+Dubai+UAE" target="_blank" rel="noopener" class="group flex items-start gap-3">
+                                <span class="footer-contact-ico mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </span>
+                                <span class="text-white/70 transition group-hover:text-white leading-relaxed">
+                                    Big Leap LV36 A, HAMRIYAH FREE ZONE, PHASE 2, SHARJAH | UAE
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@bigleap.ae" class="group flex items-center gap-3">
+                                <span class="footer-contact-ico">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </span>
+                                <span class="text-white/70 transition group-hover:text-white">info@bigleap.ae</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+971542791581" class="group flex items-center gap-3">
+                                <span class="footer-contact-ico">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.5 1.21l-2.26 1.13a11 11 0 005 5l1.13-2.26a1 1 0 011.21-.5l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z" />
+                                    </svg>
+                                </span>
+                                <span class="text-white/70 transition group-hover:text-white">+971-542791581</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/971542791581" target="_blank" rel="noopener" class="group flex items-center gap-3">
+                                <span class="footer-contact-ico">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.017-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                    </svg>
+                                </span>
+                                <span class="text-white/70 transition group-hover:text-white">+971-542791581</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                   
+                </div>
+
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="mt-12 flex flex-col items-center gap-4 border-t border-white/10 pt-6 text-center sm:flex-row sm:justify-between sm:text-left">
+                <p class="text-sm text-white/50">
+                    &copy; <span id="footerYear">2026</span> BigLeap. All Rights Reserved.
+                </p>
+                <div class="flex items-center gap-5 text-sm text-white/50">
+                    <a href="#" class="transition hover:text-white">Privacy Policy</a>
+                    <a href="#" class="transition hover:text-white">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+        <!-- End Footer section -->
+
+    <!-- Back to top -->
+    <button id="backToTop" class="back-to-top-btn" type="button" aria-label="Back to top">
+        <span class="back-to-top-shine" aria-hidden="true"></span>
+        <svg class="back-to-top-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path class="back-to-top-arrow-line" d="M12 18V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path class="back-to-top-arrow-head" d="m8 10 4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+
+         <script src="./js/main.js" defer></script>
+</body>
+
+</html>

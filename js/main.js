@@ -440,9 +440,9 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
 })();
 (function () {
     const QUOTE_FORM_CONFIG = {
-        web3formsAccessKey: "3c1a4604-1567-4183-aee4-919ff32790de",
+        web3formsAccessKey: "YOUR_WEB3FORMS_KEY_HERE",
         gasWebappUrl:
-            "https://script.google.com/macros/s/AKfycbwyhcKJ6xLJkKMX_yTl_5-SSsci-BX5G6OnSRpZsl-NG49gSEHldHHRLfLnQEXBwAUhpw/exec",
+            "https://script.google.com/macros/s/AKfycbxu2HZSYIofSNqAB3tqVE6IdUpb181UuU8aBET7m0Um56SGUX3g1-t_5VR7lbSIklCATQ/exec",
         apiEndpoint: "./api/quote-submit.php",
         thankYouUrl: "https://www.landing.bigleap.ae/thank-you",
     };

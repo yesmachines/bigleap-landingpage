@@ -8,7 +8,7 @@
  *   3. Deploy → Manage deployments → Edit (pencil) → Version: New version → Deploy
  */
 
-var RECIPIENT_EMAIL = 'saneshbigleap@gmail.com';
+var RECIPIENT_EMAIL = 'marketing@bigleap.ae';
 var SHEET_HEADERS = [
   'Timestamp',
   'Full Name',

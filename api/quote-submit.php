@@ -37,6 +37,7 @@ $firstName = trim((string)($payload['firstName'] ?? ''));
 $email = trim((string)($payload['email'] ?? ''));
 $mobile = trim((string)($payload['mobile'] ?? ''));
 $company = trim((string)($payload['company'] ?? ''));
+$website = trim((string)($payload['website'] ?? ''));
 $service = trim((string)($payload['service'] ?? ''));
 $message = trim((string)($payload['message'] ?? ''));
 $allowedServices = [
@@ -66,6 +67,14 @@ if ($company === '' || mb_strlen($company) < 2) {
 if (mb_strlen($company) > 100) {
     $errors[] = 'Company name is too long.';
 }
+if ($website !== '') {
+    $websiteToCheck = preg_match('#^https?://#i', $website) ? $website : 'https://' . $website;
+    if (filter_var($websiteToCheck, FILTER_VALIDATE_URL) === false || mb_strlen($website) > 2048) {
+        $errors[] = 'Please enter a valid website URL.';
+    } else {
+        $website = $websiteToCheck;
+    }
+}
 if (!in_array($service, $allowedServices, true)) {
     $errors[] = 'Please select a service.';
 }
@@ -80,6 +89,7 @@ $data = [
     'email' => $email,
     'mobile' => $mobile,
     'company' => $company,
+    'website' => $website,
     'service' => $service,
     'message' => $message,
 ];
@@ -180,6 +190,7 @@ function postToWeb3Forms(string $accessKey, string $recipientEmail, array $data)
         'email' => $data['email'],
         'phone' => $data['mobile'],
         'company' => $data['company'] ?? '',
+        'website' => $data['website'] ?? '',
         'service' => $data['service'] ?? '',
         'message' => $data['message'],
         'replyto' => $data['email'],

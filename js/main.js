@@ -451,6 +451,19 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
     const PHONE_DIGITS_MIN = 7;
     const PHONE_DIGITS_MAX = 15;
     const MESSAGE_MAX = 2000;
+    const normalizeWebsite = (value) => {
+        const v = value.trim();
+        if (!v) return "";
+        const withProtocol = /^https?:\/\//i.test(v) ? v : "https://" + v;
+        try {
+            const parsed = new URL(withProtocol);
+            if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return "";
+            if (!parsed.hostname || !parsed.hostname.includes(".")) return "";
+            return parsed.href;
+        } catch (_) {
+            return "";
+        }
+    };
     const validators = {
         firstName(value) {
             const v = value.trim();
@@ -480,6 +493,12 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
             if (v.length < 2) return "Company name must be at least 2 characters.";
             return "";
         },
+        website(value) {
+            const v = value.trim();
+            if (!v) return "";
+            if (!normalizeWebsite(v)) return "Please enter a valid website URL.";
+            return "";
+        },
         service(value) {
             if (!value.trim()) return "Please select a service.";
             return "";
@@ -493,6 +512,7 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
         email: form.querySelector('[name="email"]'),
         mobile: form.querySelector('[name="mobile"]'),
         company: form.querySelector('[name="company"]'),
+        website: form.querySelector('[name="website"]'),
         service: form.querySelector('[name="service"]'),
         message: form.querySelector('[name="message"]'),
     };
@@ -545,6 +565,7 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
         email: fields.email.value.trim(),
         mobile: fields.mobile.value.trim(),
         company: fields.company ? fields.company.value.trim() : "",
+        website: fields.website ? normalizeWebsite(fields.website.value) || fields.website.value.trim() : "",
         service: fields.service ? fields.service.value.trim() : "",
         message: fields.message.value.trim(),
     });
@@ -614,6 +635,7 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
                 email: data.email,
                 phone: data.mobile,
                 company: data.company,
+                website: data.website,
                 service: data.service,
                 message: data.message,
                 replyto: data.email,

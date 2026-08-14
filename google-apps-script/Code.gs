@@ -12,8 +12,8 @@ function getSheet_() {
 function setupSheet() {
   var sheet = getSheet_();
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Timestamp', 'Full Name', 'Email', 'Mobile', 'Message', 'Service', 'Company']);
-    sheet.getRange(1, 1, 1, 7).setFontWeight('bold');
+    sheet.appendRow(['Timestamp', 'Full Name', 'Email', 'Mobile', 'Message', 'Service', 'Company', 'Website']);
+    sheet.getRange(1, 1, 1, 8).setFontWeight('bold');
     sheet.setFrozenRows(1);
   }
   // Force Mobile column to plain text (prevents +971... showing as #ERROR!)
@@ -26,6 +26,7 @@ function testSubmission() {
     email: 'test@example.com',
     mobile: '+971 50 000 0000',
     company: 'Acme Studios',
+    website: 'https://www.example.com',
     service: '3D Animation',
     message: 'Test from Apps Script — delete this row after checking.'
   });
@@ -56,6 +57,7 @@ function handleSubmission_(payload) {
   var email = sanitize_(payload.email);
   var mobile = sanitize_(payload.mobile);
   var company = sanitize_(payload.company);
+  var website = sanitize_(payload.website);
   var service = sanitize_(payload.service);
   var message = sanitize_(payload.message);
 
@@ -71,7 +73,10 @@ function handleSubmission_(payload) {
   if (!sheet.getRange(1, 7).getValue()) {
     sheet.getRange(1, 7).setValue('Company').setFontWeight('bold');
   }
-  sheet.appendRow([new Date(), firstName, email, '', message, service, company]);
+  if (!sheet.getRange(1, 8).getValue()) {
+    sheet.getRange(1, 8).setValue('Website').setFontWeight('bold');
+  }
+  sheet.appendRow([new Date(), firstName, email, '', message, service, company, website]);
   var row = sheet.getLastRow();
   sheet.getRange(row, 4).setNumberFormat('@').setValue(mobile);
 
@@ -85,6 +90,7 @@ function handleSubmission_(payload) {
         'Email: ' + email + '\n' +
         'Mobile: ' + mobile + '\n' +
         'Company: ' + company + '\n' +
+        'Website: ' + (website || '-') + '\n' +
         'Service: ' + service + '\n' +
         'Message:\n' + message,
       replyTo: email

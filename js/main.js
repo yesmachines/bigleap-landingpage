@@ -451,24 +451,7 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
     const PHONE_DIGITS_MIN = 7;
     const PHONE_DIGITS_MAX = 15;
     const MESSAGE_MAX = 2000;
-    const normalizeWebsite = (value) => {
-        const v = value.trim();
-        if (!v) return "";
-        const withProtocol = /^https?:\/\//i.test(v) ? v : "https://" + v;
-        try {
-            const parsed = new URL(withProtocol);
-            if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return "";
-            if (!parsed.hostname || !parsed.hostname.includes(".")) return "";
-            return parsed.href;
-        } catch (_) {
-            return "";
-        }
-    };
-    const websiteForEmail = (value) => {
-        const normalized = normalizeWebsite(value);
-        if (!normalized) return "";
-        return normalized.replace(/^https?:\/\//i, "").replace(/\/$/, "");
-    };
+    const websiteForEmail = (value) => String(value || "").trim();
     const validators = {
         firstName(value) {
             const v = value.trim();
@@ -499,9 +482,7 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
             return "";
         },
         website(value) {
-            const v = value.trim();
-            if (!v) return "";
-            if (!normalizeWebsite(v)) return "Please enter a valid website URL.";
+            if (value.trim().length > 2048) return "Website is too long.";
             return "";
         },
         service(value) {
@@ -570,7 +551,7 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
         email: fields.email.value.trim(),
         mobile: fields.mobile.value.trim(),
         company: fields.company ? fields.company.value.trim() : "",
-        website: fields.website ? normalizeWebsite(fields.website.value) || fields.website.value.trim() : "",
+        website: fields.website ? fields.website.value.trim() : "",
         service: fields.service ? fields.service.value.trim() : "",
         message: fields.message.value.trim(),
     });

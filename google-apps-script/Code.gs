@@ -128,9 +128,7 @@ function sanitize_(value) {
 }
 
 function websiteForEmail_(website) {
-  var v = sanitize_(website);
-  if (!v) return '';
-  return v.replace(/^https?:\/\//i, '').replace(/\/$/, '');
+  return sanitize_(website);
 }
 
 function jsonResponse_(obj) {

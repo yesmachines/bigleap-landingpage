@@ -67,13 +67,8 @@ if ($company === '' || mb_strlen($company) < 2) {
 if (mb_strlen($company) > 100) {
     $errors[] = 'Company name is too long.';
 }
-if ($website !== '') {
-    $websiteToCheck = preg_match('#^https?://#i', $website) ? $website : 'https://' . $website;
-    if (filter_var($websiteToCheck, FILTER_VALIDATE_URL) === false || mb_strlen($website) > 2048) {
-        $errors[] = 'Please enter a valid website URL.';
-    } else {
-        $website = $websiteToCheck;
-    }
+if (mb_strlen($website) > 2048) {
+    $errors[] = 'Website is too long.';
 }
 if (!in_array($service, $allowedServices, true)) {
     $errors[] = 'Please select a service.';
@@ -178,11 +173,7 @@ function postToGas(string $url, array $data): array
 
 function websiteForEmail(string $website): string
 {
-    $website = trim($website);
-    if ($website === '') {
-        return '';
-    }
-    return rtrim(preg_replace('#^https?://#i', '', $website), '/');
+    return trim($website);
 }
 
 function postToWeb3Forms(string $accessKey, string $recipientEmail, array $data): array

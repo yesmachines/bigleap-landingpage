@@ -440,7 +440,7 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
 })();
 (function () {
     const QUOTE_FORM_CONFIG = {
-        web3formsAccessKey: "YOUR_WEB3FORMS_KEY_HERE",
+        web3formsAccessKey: "2ddd9636-3dae-4ebd-8b1f-42a65efd598a",
         gasWebappUrl:
             "https://script.google.com/macros/s/AKfycbxu2HZSYIofSNqAB3tqVE6IdUpb181UuU8aBET7m0Um56SGUX3g1-t_5VR7lbSIklCATQ/exec",
         apiEndpoint: "./api/quote-submit.php",

@@ -12,8 +12,8 @@ function getSheet_() {
 function setupSheet() {
   var sheet = getSheet_();
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Timestamp', 'Full Name', 'Email', 'Mobile', 'Message']);
-    sheet.getRange(1, 1, 1, 5).setFontWeight('bold');
+    sheet.appendRow(['Timestamp', 'Full Name', 'Email', 'Mobile', 'Message', 'Service', 'Company']);
+    sheet.getRange(1, 1, 1, 7).setFontWeight('bold');
     sheet.setFrozenRows(1);
   }
   // Force Mobile column to plain text (prevents +971... showing as #ERROR!)
@@ -25,6 +25,8 @@ function testSubmission() {
     firstName: 'Test User',
     email: 'test@example.com',
     mobile: '+971 50 000 0000',
+    company: 'Acme Studios',
+    service: '3D Animation',
     message: 'Test from Apps Script — delete this row after checking.'
   });
   Logger.log(result.getContent());
@@ -53,15 +55,23 @@ function handleSubmission_(payload) {
   var firstName = sanitize_(payload.firstName);
   var email = sanitize_(payload.email);
   var mobile = sanitize_(payload.mobile);
+  var company = sanitize_(payload.company);
+  var service = sanitize_(payload.service);
   var message = sanitize_(payload.message);
 
-  if (!firstName || !email || !mobile || !message) {
+  if (!firstName || !email || !mobile || !company) {
     return jsonResponse_({ success: false, error: 'Missing required fields.' });
   }
 
   setupSheet();
   var sheet = getSheet_();
-  sheet.appendRow([new Date(), firstName, email, '', message]);
+  if (!sheet.getRange(1, 6).getValue()) {
+    sheet.getRange(1, 6).setValue('Service').setFontWeight('bold');
+  }
+  if (!sheet.getRange(1, 7).getValue()) {
+    sheet.getRange(1, 7).setValue('Company').setFontWeight('bold');
+  }
+  sheet.appendRow([new Date(), firstName, email, '', message, service, company]);
   var row = sheet.getLastRow();
   sheet.getRange(row, 4).setNumberFormat('@').setValue(mobile);
 
@@ -74,6 +84,8 @@ function handleSubmission_(payload) {
         'Full Name: ' + firstName + '\n' +
         'Email: ' + email + '\n' +
         'Mobile: ' + mobile + '\n' +
+        'Company: ' + company + '\n' +
+        'Service: ' + service + '\n' +
         'Message:\n' + message,
       replyTo: email
     });

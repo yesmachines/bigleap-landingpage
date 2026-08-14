@@ -36,7 +36,18 @@ if (!is_array($payload)) {
 $firstName = trim((string)($payload['firstName'] ?? ''));
 $email = trim((string)($payload['email'] ?? ''));
 $mobile = trim((string)($payload['mobile'] ?? ''));
+$company = trim((string)($payload['company'] ?? ''));
+$service = trim((string)($payload['service'] ?? ''));
 $message = trim((string)($payload['message'] ?? ''));
+$allowedServices = [
+    '3D Animation',
+    '2D Animation',
+    'Product Animation',
+    'Character Design',
+    'Character Animation',
+    'Product Explainer Video',
+    'Logo Animation',
+];
 
 $errors = [];
 if ($firstName === '' || mb_strlen($firstName) < 2) {
@@ -49,6 +60,15 @@ $digits = preg_replace('/\D+/', '', $mobile);
 if ($digits === null || strlen($digits) < 7 || strlen($digits) > 15) {
     $errors[] = 'Please enter a valid mobile number.';
 }
+if ($company === '' || mb_strlen($company) < 2) {
+    $errors[] = 'Please enter your company name.';
+}
+if (mb_strlen($company) > 100) {
+    $errors[] = 'Company name is too long.';
+}
+if (!in_array($service, $allowedServices, true)) {
+    $errors[] = 'Please select a service.';
+}
 if ($errors) {
     http_response_code(422);
     echo json_encode(['success' => false, 'error' => implode(' ', $errors)]);
@@ -59,6 +79,8 @@ $data = [
     'firstName' => $firstName,
     'email' => $email,
     'mobile' => $mobile,
+    'company' => $company,
+    'service' => $service,
     'message' => $message,
 ];
 
@@ -157,6 +179,8 @@ function postToWeb3Forms(string $accessKey, string $recipientEmail, array $data)
         'name' => $data['firstName'],
         'email' => $data['email'],
         'phone' => $data['mobile'],
+        'company' => $data['company'] ?? '',
+        'service' => $data['service'] ?? '',
         'message' => $data['message'],
         'replyto' => $data['email'],
     ]);

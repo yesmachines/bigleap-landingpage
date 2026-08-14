@@ -2491,6 +2491,12 @@ body {
     padding-right: 2.25rem;
     cursor: pointer;
 }
+.quote-select-wrap select:required:invalid {
+    color: #94a3b8;
+}
+.quote-select-wrap select option {
+    color: #1e293b;
+}
 .quote-select-arrow {
     position: absolute;
     right: 0.75rem;

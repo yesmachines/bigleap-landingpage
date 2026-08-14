@@ -440,9 +440,9 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
 })();
 (function () {
     const QUOTE_FORM_CONFIG = {
-        web3formsAccessKey: "2ddd9636-3dae-4ebd-8b1f-42a65efd598a",
+        web3formsAccessKey: "3c1a4604-1567-4183-aee4-919ff32790de",
         gasWebappUrl:
-            "https://script.google.com/macros/s/AKfycbxu2HZSYIofSNqAB3tqVE6IdUpb181UuU8aBET7m0Um56SGUX3g1-t_5VR7lbSIklCATQ/exec",
+            "https://script.google.com/macros/s/AKfycbwyhcKJ6xLJkKMX_yTl_5-SSsci-BX5G6OnSRpZsl-NG49gSEHldHHRLfLnQEXBwAUhpw/exec",
         apiEndpoint: "./api/quote-submit.php",
         thankYouUrl: "https://www.landing.bigleap.ae/thank-you",
     };
@@ -474,10 +474,14 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
             }
             return "";
         },
-        message(value) {
+        company(value) {
             const v = value.trim();
-            if (!v) return "Please enter a message.";
-            if (v.length > MESSAGE_MAX) return `Message must be under ${MESSAGE_MAX} characters.`;
+            if (!v) return "Please enter your company name.";
+            if (v.length < 2) return "Company name must be at least 2 characters.";
+            return "";
+        },
+        service(value) {
+            if (!value.trim()) return "Please select a service.";
             return "";
         },
     };
@@ -488,6 +492,8 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
         firstName: form.querySelector('[name="firstName"]'),
         email: form.querySelector('[name="email"]'),
         mobile: form.querySelector('[name="mobile"]'),
+        company: form.querySelector('[name="company"]'),
+        service: form.querySelector('[name="service"]'),
         message: form.querySelector('[name="message"]'),
     };
     const ensureErrorEl = (input) => {
@@ -538,6 +544,8 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
         firstName: fields.firstName.value.trim(),
         email: fields.email.value.trim(),
         mobile: fields.mobile.value.trim(),
+        company: fields.company ? fields.company.value.trim() : "",
+        service: fields.service ? fields.service.value.trim() : "",
         message: fields.message.value.trim(),
     });
     const ensureFormAlert = () => {
@@ -605,6 +613,8 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
                 name: data.firstName,
                 email: data.email,
                 phone: data.mobile,
+                company: data.company,
+                service: data.service,
                 message: data.message,
                 replyto: data.email,
             }),
@@ -640,6 +650,7 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
         if (!input) return;
         ensureErrorEl(input);
         input.addEventListener("blur", () => validateField(name));
+        input.addEventListener("change", () => validateField(name));
         input.addEventListener("input", () => {
             if (input.closest(".quote-field")?.classList.contains("is-invalid")) {
                 validateField(name);

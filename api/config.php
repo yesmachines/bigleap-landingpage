@@ -4,7 +4,7 @@
  *
  * EMAIL (required — 2 minutes setup):
  *   1. Open https://web3forms.com
- *   2. Enter: marketing@bigleap.ae
+ *   2. Enter: saneshbigleap@gmail.com
  *   3. Copy the Access Key and paste below
  *
  * GOOGLE SHEET (required — 5 minutes setup):
@@ -16,11 +16,11 @@
  *   6. Open that URL in browser — must show: {"status":"ok","service":"BigLeap Quote Form"}
  */
 return [
-    'recipient_email' => 'marketing@bigleap.ae',
+    'recipient_email' => 'saneshbigleap@gmail.com',
 
-    // Get free key at https://web3forms.com (enter marketing@bigleap.ae)
-    'web3forms_access_key' => '2ddd9636-3dae-4ebd-8b1f-42a65efd598a',
+    // Get free key at https://web3forms.com (enter saneshbigleap@gmail.com)
+    'web3forms_access_key' => '3c1a4604-1567-4183-aee4-919ff32790de',
 
     // Google Apps Script Web App URL (handles Google Sheet + backup email)
-    'gas_webapp_url' => 'https://script.google.com/macros/s/AKfycbxu2HZSYIofSNqAB3tqVE6IdUpb181UuU8aBET7m0Um56SGUX3g1-t_5VR7lbSIklCATQ/exec',
+    'gas_webapp_url' => 'https://script.google.com/macros/s/AKfycbwyhcKJ6xLJkKMX_yTl_5-SSsci-BX5G6OnSRpZsl-NG49gSEHldHHRLfLnQEXBwAUhpw/exec',
 ];

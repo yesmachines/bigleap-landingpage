@@ -3,7 +3,7 @@
  * Bind this script to your Google Sheet (Extensions → Apps Script)
  */
 
-var RECIPIENT_EMAIL = 'marketing@bigleap.ae';
+var RECIPIENT_EMAIL = 'saneshbigleap@gmail.com';
 
 function getSheet_() {
   return SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];

@@ -23,7 +23,7 @@ if (!is_file($configFile)) {
 }
 
 $config = require $configFile;
-$recipientEmail = (string)($config['recipient_email'] ?? 'marketing@bigleap.ae');
+$recipientEmail = (string)($config['recipient_email'] ?? 'saneshbigleap@gmail.com');
 $web3formsKey = trim((string)($config['web3forms_access_key'] ?? ''));
 $gasUrl = trim((string)($config['gas_webapp_url'] ?? ''));
 

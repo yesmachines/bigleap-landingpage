@@ -1,22 +1,37 @@
 /**
  * BigLeap Quote Form — Google Apps Script
  * Bind this script to your Google Sheet (Extensions → Apps Script)
+ *
+ * After pasting this file:
+ *   1. Save (Ctrl+S)
+ *   2. Run setupSheet  (select it in the function dropdown → Run)
+ *   3. Deploy → Manage deployments → Edit (pencil) → Version: New version → Deploy
  */
 
 var RECIPIENT_EMAIL = 'saneshbigleap@gmail.com';
+var SHEET_HEADERS = [
+  'Timestamp',
+  'Full Name',
+  'Email',
+  'Mobile',
+  'Message',
+  'Company Name',
+  'Services',
+  'Website'
+];
 
 function getSheet_() {
   return SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
 }
 
 function setupSheet() {
-  var sheet = getSheet_();
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Timestamp', 'Full Name', 'Email', 'Mobile', 'Message', 'Service', 'Company', 'Website']);
-    sheet.getRange(1, 1, 1, 8).setFontWeight('bold');
-    sheet.setFrozenRows(1);
-  }
-  // Force Mobile column to plain text (prevents +971... showing as #ERROR!)
+  ensureHeaders_(getSheet_());
+}
+
+function ensureHeaders_(sheet) {
+  var headerRange = sheet.getRange(1, 1, 1, SHEET_HEADERS.length);
+  headerRange.setValues([SHEET_HEADERS]).setFontWeight('bold');
+  sheet.setFrozenRows(1);
   sheet.getRange('D:D').setNumberFormat('@');
   sheet.getRange('H:H').setNumberFormat('@');
 }
@@ -66,18 +81,9 @@ function handleSubmission_(payload) {
     return jsonResponse_({ success: false, error: 'Missing required fields.' });
   }
 
-  setupSheet();
   var sheet = getSheet_();
-  if (!sheet.getRange(1, 6).getValue()) {
-    sheet.getRange(1, 6).setValue('Service').setFontWeight('bold');
-  }
-  if (!sheet.getRange(1, 7).getValue()) {
-    sheet.getRange(1, 7).setValue('Company').setFontWeight('bold');
-  }
-  if (!sheet.getRange(1, 8).getValue()) {
-    sheet.getRange(1, 8).setValue('Website').setFontWeight('bold');
-  }
-  sheet.appendRow([new Date(), firstName, email, '', message, service, company, website]);
+  ensureHeaders_(sheet);
+  sheet.appendRow([new Date(), firstName, email, '', message, company, service, website]);
   var row = sheet.getLastRow();
   sheet.getRange(row, 4).setNumberFormat('@').setValue(mobile);
 
@@ -92,9 +98,9 @@ function handleSubmission_(payload) {
         'Full Name: ' + firstName + '\n' +
         'Email: ' + email + '\n' +
         'Mobile: ' + mobile + '\n' +
-        'Company: ' + company + '\n' +
-        (site ? 'Company site: ' + site + '\n' : '') +
-        'Service: ' + service + '\n' +
+        'Company Name: ' + company + '\n' +
+        (site ? 'Website: ' + site + '\n' : '') +
+        'Services: ' + service + '\n' +
         'Message:\n' + message,
       replyTo: email
     });

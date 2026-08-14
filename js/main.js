@@ -464,6 +464,11 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
             return "";
         }
     };
+    const websiteForEmail = (value) => {
+        const normalized = normalizeWebsite(value);
+        if (!normalized) return "";
+        return normalized.replace(/^https?:\/\//i, "").replace(/\/$/, "");
+    };
     const validators = {
         firstName(value) {
             const v = value.trim();
@@ -627,19 +632,23 @@ function initSlider({ rootId, trackId, dotsId, viewportSel, slidesHtml, perView,
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: { "Content-Type": "application/json", Accept: "application/json" },
-            body: JSON.stringify({
-                access_key: QUOTE_FORM_CONFIG.web3formsAccessKey,
-                subject: "New Quote Enquiry — " + data.firstName,
-                from_name: "BigLeap Website",
-                name: data.firstName,
-                email: data.email,
-                phone: data.mobile,
-                company: data.company,
-                website: data.website,
-                service: data.service,
-                message: data.message,
-                replyto: data.email,
-            }),
+            body: JSON.stringify((() => {
+                const payload = {
+                    access_key: QUOTE_FORM_CONFIG.web3formsAccessKey,
+                    subject: "New Quote Enquiry — " + data.firstName,
+                    from_name: "BigLeap",
+                    name: data.firstName,
+                    email: data.email,
+                    phone: data.mobile,
+                    company: data.company,
+                    service: data.service,
+                    message: data.message,
+                    replyto: data.email,
+                };
+                const site = websiteForEmail(data.website);
+                if (site) payload.company_site = site;
+                return payload;
+            })()),
         });
         let result = {};
         try {

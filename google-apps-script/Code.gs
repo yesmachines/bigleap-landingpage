@@ -18,6 +18,7 @@ function setupSheet() {
   }
   // Force Mobile column to plain text (prevents +971... showing as #ERROR!)
   sheet.getRange('D:D').setNumberFormat('@');
+  sheet.getRange('H:H').setNumberFormat('@');
 }
 
 function testSubmission() {
@@ -81,16 +82,18 @@ function handleSubmission_(payload) {
   sheet.getRange(row, 4).setNumberFormat('@').setValue(mobile);
 
   try {
+    var site = websiteForEmail_(website);
     MailApp.sendEmail({
       to: RECIPIENT_EMAIL,
+      name: 'BigLeap',
       subject: 'New Quote Enquiry — ' + firstName,
       body:
-        'New quote enquiry from BigLeap website.\n\n' +
+        'New quote enquiry from the BigLeap contact form.\n\n' +
         'Full Name: ' + firstName + '\n' +
         'Email: ' + email + '\n' +
         'Mobile: ' + mobile + '\n' +
         'Company: ' + company + '\n' +
-        'Website: ' + (website || '-') + '\n' +
+        (site ? 'Company site: ' + site + '\n' : '') +
         'Service: ' + service + '\n' +
         'Message:\n' + message,
       replyTo: email
@@ -116,6 +119,12 @@ function parsePayload_(e) {
 
 function sanitize_(value) {
   return String(value || '').trim();
+}
+
+function websiteForEmail_(website) {
+  var v = sanitize_(website);
+  if (!v) return '';
+  return v.replace(/^https?:\/\//i, '').replace(/\/$/, '');
 }
 
 function jsonResponse_(obj) {

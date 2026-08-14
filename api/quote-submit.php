@@ -176,25 +176,38 @@ function postToGas(string $url, array $data): array
     return ['ok' => true];
 }
 
+function websiteForEmail(string $website): string
+{
+    $website = trim($website);
+    if ($website === '') {
+        return '';
+    }
+    return rtrim(preg_replace('#^https?://#i', '', $website), '/');
+}
+
 function postToWeb3Forms(string $accessKey, string $recipientEmail, array $data): array
 {
     if (!function_exists('curl_init')) {
         return ['ok' => false, 'error' => 'curl not available'];
     }
 
-    $payload = json_encode([
+    $payload = [
         'access_key' => $accessKey,
         'subject' => 'New Quote Enquiry — ' . $data['firstName'],
-        'from_name' => 'BigLeap Website',
+        'from_name' => 'BigLeap',
         'name' => $data['firstName'],
         'email' => $data['email'],
         'phone' => $data['mobile'],
         'company' => $data['company'] ?? '',
-        'website' => $data['website'] ?? '',
         'service' => $data['service'] ?? '',
         'message' => $data['message'],
         'replyto' => $data['email'],
-    ]);
+    ];
+    $site = websiteForEmail($data['website'] ?? '');
+    if ($site !== '') {
+        $payload['company_site'] = $site;
+    }
+    $payload = json_encode($payload);
 
     $ch = curl_init('https://api.web3forms.com/submit');
     curl_setopt_array($ch, [

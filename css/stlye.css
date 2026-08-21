@@ -699,11 +699,15 @@ body {
     width: 48px;
     flex-shrink: 0;
     border-radius: 14px;
-    font-size: 1.15rem;
     color: #fff;
     background: #ed2124;
     box-shadow: 0 10px 24px -8px rgb(237 33 36 / 0.7);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.offer-feature-ico svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
 }
 .offer-feature:hover .offer-feature-ico {
     transform: scale(1.08) rotate(-4deg);
@@ -1863,10 +1867,17 @@ body {
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 0.75rem;
-    font-size: 1rem;
     color: #fff;
     background: #ed2124;
-    box-shadow: 0 8px 20px -8px rgb(237 33 36 / 0.7);
+    box-shadow:
+        0 0 0 1px rgb(237 33 36 / 0.25),
+        0 0 18px rgb(237 33 36 / 0.55),
+        0 8px 20px -8px rgb(237 33 36 / 0.7);
+}
+.hiw-step-ico svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    display: block;
 }
 .hiw-step h4 {
     font-size: 0.98rem;
@@ -1979,8 +1990,10 @@ body {
         background 0.3s ease,
         box-shadow 0.3s ease;
 }
-.attractive-tags li i {
-    font-size: 0.72rem;
+.attractive-tags li svg {
+    width: 0.85rem;
+    height: 0.85rem;
+    flex-shrink: 0;
     color: #ed2124;
 }
 .attractive-tags li:hover {
@@ -2004,12 +2017,18 @@ body {
     border-radius: 9999px;
     font-size: 0.9rem;
     font-weight: 600;
+    line-height: 1.2;
     text-decoration: none;
     transition:
-        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.3s ease,
         box-shadow 0.3s ease,
         background 0.3s ease,
         border-color 0.3s ease;
+}
+.attractive-btn svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex-shrink: 0;
 }
 .attractive-btn:hover {
     transform: translateY(-3px);
@@ -2133,10 +2152,14 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 12px;
-    font-size: 0.95rem;
     color: #fff;
     background: #ed2124;
     box-shadow: 0 8px 20px -6px rgb(237 33 36 / 0.6);
+}
+.attractive-badge-ico svg {
+    width: 1rem;
+    height: 1rem;
+    display: block;
 }
 .attractive-badge-num {
     display: block;

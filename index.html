@@ -29,8 +29,8 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Suez+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="./css/stlye.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/output.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <link rel="icon" type="image/png" href="./img/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
     <link rel="shortcut icon" href="./img/favicon.ico" />
@@ -97,10 +97,18 @@
         <!-- End Header -->
 
         <!-- Video (fills the hero) -->
-        <video src="img/ninja-indroduction-video.webm" autoplay muted loop playsinline preload="auto"
-            class="absolute inset-0 h-full w-full object-cover"></video>
-        <!-- <video src="img/Bigleap_Intro.mp4" autoplay muted loop playsinline
-            class="absolute inset-0 h-full w-full object-cover"></video> -->
+        
+
+            <video
+            class="absolute inset-0 h-full w-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="img/hero-poster.webp">
+            <source src="img/ninja-indroduction-video.webm" type="video/webm">
+        </video>
 
         <!-- Readability overlays -->
         <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/40"></div>

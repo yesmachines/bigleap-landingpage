@@ -37,7 +37,6 @@ $firstName = trim((string)($payload['firstName'] ?? ''));
 $email = trim((string)($payload['email'] ?? ''));
 $mobile = trim((string)($payload['mobile'] ?? ''));
 $company = trim((string)($payload['company'] ?? ''));
-$website = trim((string)($payload['website'] ?? ''));
 $service = trim((string)($payload['service'] ?? ''));
 $message = trim((string)($payload['message'] ?? ''));
 $allowedServices = [
@@ -67,9 +66,6 @@ if ($company === '' || mb_strlen($company) < 2) {
 if (mb_strlen($company) > 100) {
     $errors[] = 'Company name is too long.';
 }
-if (mb_strlen($website) > 2048) {
-    $errors[] = 'Website is too long.';
-}
 if (!in_array($service, $allowedServices, true)) {
     $errors[] = 'Please select a service.';
 }
@@ -84,7 +80,6 @@ $data = [
     'email' => $email,
     'mobile' => $mobile,
     'company' => $company,
-    'website' => $website,
     'service' => $service,
     'message' => $message,
 ];
@@ -171,11 +166,6 @@ function postToGas(string $url, array $data): array
     return ['ok' => true];
 }
 
-function websiteForEmail(string $website): string
-{
-    return trim($website);
-}
-
 function postToWeb3Forms(string $accessKey, string $recipientEmail, array $data): array
 {
     if (!function_exists('curl_init')) {
@@ -194,10 +184,6 @@ function postToWeb3Forms(string $accessKey, string $recipientEmail, array $data)
         'message' => $data['message'],
         'replyto' => $data['email'],
     ];
-    $site = websiteForEmail($data['website'] ?? '');
-    if ($site !== '') {
-        $payload['company_site'] = $site;
-    }
     $payload = json_encode($payload);
 
     $ch = curl_init('https://api.web3forms.com/submit');

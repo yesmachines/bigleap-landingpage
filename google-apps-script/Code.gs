@@ -16,8 +16,7 @@ var SHEET_HEADERS = [
   'Mobile',
   'Message',
   'Company Name',
-  'Services',
-  'Website'
+  'Services'
 ];
 
 function getSheet_() {
@@ -33,7 +32,6 @@ function ensureHeaders_(sheet) {
   headerRange.setValues([SHEET_HEADERS]).setFontWeight('bold');
   sheet.setFrozenRows(1);
   sheet.getRange('D:D').setNumberFormat('@');
-  sheet.getRange('H:H').setNumberFormat('@');
 }
 
 function testSubmission() {
@@ -42,7 +40,6 @@ function testSubmission() {
     email: 'test@example.com',
     mobile: '+971 50 000 0000',
     company: 'Acme Studios',
-    website: 'https://www.example.com',
     service: '3D Animation',
     message: 'Test from Apps Script — delete this row after checking.'
   });
@@ -73,7 +70,6 @@ function handleSubmission_(payload) {
   var email = sanitize_(payload.email);
   var mobile = sanitize_(payload.mobile);
   var company = sanitize_(payload.company);
-  var website = sanitize_(payload.website);
   var service = sanitize_(payload.service);
   var message = sanitize_(payload.message);
 
@@ -83,12 +79,11 @@ function handleSubmission_(payload) {
 
   var sheet = getSheet_();
   ensureHeaders_(sheet);
-  sheet.appendRow([new Date(), firstName, email, '', message, company, service, website]);
+  sheet.appendRow([new Date(), firstName, email, '', message, company, service]);
   var row = sheet.getLastRow();
   sheet.getRange(row, 4).setNumberFormat('@').setValue(mobile);
 
   try {
-    var site = websiteForEmail_(website);
     MailApp.sendEmail({
       to: RECIPIENT_EMAIL,
       name: 'BigLeap',
@@ -99,7 +94,6 @@ function handleSubmission_(payload) {
         'Email: ' + email + '\n' +
         'Mobile: ' + mobile + '\n' +
         'Company Name: ' + company + '\n' +
-        (site ? 'Website: ' + site + '\n' : '') +
         'Services: ' + service + '\n' +
         'Message:\n' + message,
       replyTo: email
@@ -125,10 +119,6 @@ function parsePayload_(e) {
 
 function sanitize_(value) {
   return String(value || '').trim();
-}
-
-function websiteForEmail_(website) {
-  return sanitize_(website);
 }
 
 function jsonResponse_(obj) {

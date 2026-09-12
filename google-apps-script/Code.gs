@@ -73,7 +73,7 @@ function handleSubmission_(payload) {
   var service = sanitize_(payload.service);
   var message = sanitize_(payload.message);
 
-  if (!firstName || !email || !mobile || !company) {
+  if (!firstName || !email || !mobile) {
     return jsonResponse_({ success: false, error: 'Missing required fields.' });
   }
 

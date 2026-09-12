@@ -60,8 +60,8 @@ $digits = preg_replace('/\D+/', '', $mobile);
 if ($digits === null || strlen($digits) < 7 || strlen($digits) > 15) {
     $errors[] = 'Please enter a valid mobile number.';
 }
-if ($company === '' || mb_strlen($company) < 2) {
-    $errors[] = 'Please enter your company name.';
+if ($company !== '' && mb_strlen($company) < 2) {
+    $errors[] = 'Company name must be at least 2 characters.';
 }
 if (mb_strlen($company) > 100) {
     $errors[] = 'Company name is too long.';

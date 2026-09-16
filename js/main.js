@@ -1,3 +1,9 @@
+const ASSET_BASE = (() => {
+  const script = document.querySelector('script[src*="main.js"]');
+  const src = script?.getAttribute("src") || "./js/main.js";
+  return src.replace(/js\/main\.js.*$/, "");
+})();
+
 function initSlider({
   rootId,
   trackId,
@@ -218,27 +224,27 @@ function initSlider({
     {
       title: "2D Animation",
       text: "2D animation brings matchless brand character into any brand. As a 2D animation agency, we focus on building the exact 2D aesthetic that would make your brand stand out.",
-      img: "../img/services/2D-animation.webp",
+      img: ASSET_BASE + "img/services/2D-animation.webp",
     },
     {
       title: "3D Animation",
       text: "A cutting-edge 3D brand image means immeasurable depth and sophistication to your brand identity. With our tailored 3D animation services, you can create your own brand presence anywhere in the world and stand out.",
-      img: "../img/services/3D.webp",
+      img: ASSET_BASE + "img/services/3D.webp",
     },
     {
       title: "Product Animation",
       text: "Taking the scope of your product above and beyond with advanced 3D product animation services. If you’re looking for a know-it-all product animation company, look no further than Big Leap.",
-      img: "../img/services/product.webp",
+      img: ASSET_BASE + "img/services/product.webp",
     },
     {
       title: "Character Design",
       text: "Bring your characters to life with expert character designing and rigging. We turn concepts into reality, animating characters to move. ",
-      img: "../img/services/Character-design.webp",
+      img: ASSET_BASE + "img/services/Character-design.webp",
     },
     {
       title: "Product Explainer Videos",
       text: "Maybe your product/service needs to be explained to your target audience. As a product explanation video company, we follow a comprehensive approach across understanding your product/service to shooting and editing an explainer video that covers everything from brand tone to visibility.",
-      img: "../img/services/product-animation.webp",
+      img: ASSET_BASE + "img/services/product-animation.webp",
     },
   ];
   initSlider({
@@ -277,12 +283,12 @@ function initSlider({
   const grid = document.getElementById("indGrid");
   if (!grid) return;
   const industries = [
-    { label: "Architecture", img: "../img/industry/Architecture.webp" },
-    { label: "Automotive", img: "../img/industry/Automotive.webp" },
-    { label: "Fashion", img: "../img/industry/Fashion.webp" },
-    { label: "Film & TV", img: "../img/industry/Film-and-TV.webp" },
-    { label: "Games", img: "../img/industry/Games.webp" },
-    { label: "Retail", img: "../img/industry/Retail.webp" },
+    { label: "Architecture", img: ASSET_BASE + "img/industry/Architecture.webp" },
+    { label: "Automotive", img: ASSET_BASE + "img/industry/Automotive.webp" },
+    { label: "Fashion", img: ASSET_BASE + "img/industry/Fashion.webp" },
+    { label: "Film & TV", img: ASSET_BASE + "img/industry/Film-and-TV.webp" },
+    { label: "Games", img: ASSET_BASE + "img/industry/Games.webp" },
+    { label: "Retail", img: ASSET_BASE + "img/industry/Retail.webp" },
   ];
   grid.innerHTML = industries
     .map(
@@ -349,21 +355,21 @@ function initSlider({
     {
       name: "Mr. Horst Flaig",
       role: "CEO of Flaig Magnetsysteme",
-      img: "../img/testimonials/flaig.webp",
+      img: ASSET_BASE + "img/testimonials/flaig.webp",
       rating: 5,
       text: "We had the pleasure of working with BigLeap for our animated explanatory video at Flaig Magnetsysteme, and we couldn't be happier with the results! From start to finish, their team was professional, creative, and attentive to our needs. The final video perfectly captures our message in an engaging and clear way, helping us communicate more effectively with our audience. We highly recommend BigLeap to anyone looking for top-quality animation and excellent service. Thank you, BigLeap, for your fantastic work.",
     },
     {
       name: "Mr. Prithviraj",
       role: "Rackovan - Director",
-      img: "../img/testimonials/prithviraj.webp",
+      img: ASSET_BASE + "img/testimonials/prithviraj.webp",
       rating: 5,
       text: "It's been 3 years with them and they never disappointed us. Their proactive approach, exceptional team skills, and attention to detail continuously exceeded our expectations. And also helped us to accelerate business growth.",
     },
     {
       name: "Mr. Basanth Raghavan",
       role: "Managing Director - YES Machinery",
-      img: "../img/testimonials/basanth-raghavan.webp",
+      img: ASSET_BASE + "img/testimonials/basanth-raghavan.webp",
       rating: 5,
       text: "We have a great business relationship with BigLeap. A dynamic animation studio driven by creative minds that bring your ideas and vision to life. Absolutely impressed by their animation services.",
     },

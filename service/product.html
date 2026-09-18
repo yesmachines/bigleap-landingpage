@@ -78,16 +78,14 @@
         loading="lazy"
       />
     </div>
-    <section
-      class="relative min-h-[88vh] overflow-hidden sm:min-h-[80vh] lg:min-h-screen"
-    >
+    <section class="relative isolate overflow-hidden">
       <header
         id="siteHeader"
         class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
       >
-        <div class="container mx-auto px-3 sm:px-6">
+        <div class="container mx-auto px-2 sm:px-6 2xl:max-w-[min(90%,100rem)]!">
           <div
-            class="header-inner flex items-center justify-between gap-2 py-3 transition-all duration-300 sm:gap-4 sm:py-5"
+            class="header-inner flex items-center justify-between gap-1 py-2 transition-all duration-300 sm:gap-4 sm:py-4 lg:py-5"
           >
             <a href="#" class="flex shrink-0 items-center"
               ><img
@@ -98,14 +96,15 @@
                 fetchpriority="high"
                 decoding="async"
                 loading="lazy"
-                class="logo-img h-10 w-auto drop-shadow-md transition-all duration-300 sm:h-16 lg:h-20"
+                class="logo-img h-8 w-auto drop-shadow-md transition-all duration-300 sm:h-10 lg:h-14 xl:h-20"
             /></a>
             <div
-              class="flex min-w-0 items-center justify-end gap-2 sm:gap-3 flex-row-reverse sm:flex-row"
+              class="flex shrink-0 flex-row-reverse items-center justify-end gap-1 sm:gap-3 md:flex-row"
             >
               <a
                 href="tel:+971542791581"
-                class="contact-pill group inline-flex items-center gap-2 px-1 py-2 whitespace-nowrap rounded-full border border-white/20 bg-white/10 px-2.5 py-1.5 text-[11px] font-medium text-white shadow-lg shadow-black/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 sm:px-4 sm:py-2 sm:text-sm"
+                aria-label="Call +971-542791581"
+                class="contact-pill group inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-white/20 bg-white/10 p-1 text-[10px] font-medium text-white shadow-lg shadow-black/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 md:gap-2 md:px-4 md:py-2 md:text-sm"
                 ><span
                   class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#ed2124] text-white shadow-md transition-transform duration-300 group-hover:scale-110 sm:h-8 sm:w-8"
                   ><svg
@@ -121,10 +120,11 @@
                       stroke-linejoin="round"
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.5 1.21l-2.26 1.13a11 11 0 005 5l1.13-2.26a1 1 0 011.21-.5l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"
                     /></svg></span
-                ><span class="hidden sm:inline">+971-542791581</span></a
+                ><span class="hidden md:inline">+971-542791581</span></a
               ><a
                 href="#quote"
-                class="contact-pill group inline-flex items-center gap-2 px-1 py-2 whitespace-nowrap rounded-full border border-white/20 bg-white/10 px-2.5 py-1.5 text-[11px] font-medium text-white shadow-lg shadow-black/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 sm:px-4 sm:py-2 sm:text-sm"
+                aria-label="Get Your Free Project Estimate"
+                class="contact-pill group inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-white/20 bg-white/10 p-1 text-[10px] font-medium text-white shadow-lg shadow-black/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 md:gap-2 md:px-4 md:py-2 md:text-sm"
                 ><span
                   class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#ed2124] text-white shadow-md transition-transform duration-300 group-hover:scale-110 sm:h-8 sm:w-8"
                   ><svg
@@ -140,7 +140,7 @@
                       stroke-linejoin="round"
                       d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                     /></svg></span
-                ><span> Get Your Free Project Estimate </span></a
+                ><span class="hidden md:inline">Get Your Free Project Estimate</span></a
               >
             </div>
           </div>
@@ -163,16 +163,16 @@
       <div
         class="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"
       ></div>
-      <div class="absolute inset-0 z-10 flex items-end pb-[60px]">
-        <div class="container mx-auto px-4 sm:px-6">
+      <div class="relative z-10 flex min-h-[100svh] items-center pb-8 pt-20 sm:min-h-[80svh] sm:items-end sm:pb-[60px] sm:pt-28 lg:min-h-[100svh] lg:pt-32 xl:pt-40">
+        <div class="container mx-auto px-3 sm:px-6 2xl:max-w-[min(90%,100rem)]!">
           <div
-            class="relative max-w-4xl bg-white/2 md:bg-white/3 py-8 pl-5 pr-6 text-center text-white shadow-lg shadow-black/10 backdrop-blur-none backdrop-blur-md sm:py-10 sm:pl-7 sm:pr-10 sm:text-left"
+            class="relative mx-auto max-w-4xl bg-white/2 px-3 py-5 text-left text-white shadow-lg shadow-black/10 backdrop-blur-md sm:mx-0 sm:px-0 sm:py-10 sm:pl-7 sm:pr-10 md:bg-white/3"
           >
-            <h2 class="font-fancy text-1xl lg:text-2xl">
+            <h2 class="font-fancy text-sm leading-snug sm:text-base lg:text-2xl">
               Product Animation for Manufacturers & B2B Brands
             </h2>
             <h1
-              class="relative font-fancy mt-2 text-3xl leading-[1.15] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)] sm:text-3xl lg:text-4xl xl:text-5xl"
+              class="relative mt-2 font-fancy text-2xl leading-[1.15] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)] sm:text-3xl lg:text-4xl xl:text-5xl"
             >
               3D
               <span class="mt-1 block text-[#ed2124] sm:mt-0 sm:inline">
@@ -182,14 +182,14 @@
             </h1>
 
             <p
-              class="relative mx-auto mt-5 leading-relaxed text-white/85 drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
+              class="relative mx-auto mt-3 text-sm leading-relaxed text-white/85 drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] sm:mt-5 sm:text-base"
             >
               Show your product's features, functionality and internal
               mechanisms through clear 3D animation built for marketing, sales,
               product launches and technical presentations.
             </p>
             <p
-              class="relative mx-auto mt-5 leading-relaxed text-white/85 drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
+              class="relative mx-auto mt-3 text-sm leading-relaxed text-white/85 drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] sm:mt-5 sm:text-base"
             >
               Explain complex product features visually || Show mechanisms and
               details traditional video cannot capture || Custom 3D
@@ -197,16 +197,16 @@
               machinery & industrial products
             </p>
             <div
-              class="mobile-button relative mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4"
+              class="relative mt-5 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
             >
               <a
                 href="#quote"
-                class="inline-flex items-center justify-center rounded-full border border-white/50 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(255,255,255,0.12)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/20 hover:shadow-[0_0_32px_rgba(255,255,255,0.22)]"
+                class="inline-flex items-center justify-center rounded-2xl border border-white/50 bg-white/10 px-3 py-3.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(255,255,255,0.12)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/20 hover:shadow-[0_0_32px_rgba(255,255,255,0.22)] sm:shrink-0 sm:rounded-full sm:px-7"
                 >Get Your Free Product Animation Estimate
               </a>
               <a
                 href="#quote"
-                class="inline-flex items-center justify-center rounded-full bg-[#ed2124] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(237,33,36,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ff2a2d] hover:shadow-[0_0_42px_rgba(237,33,36,0.8)]"
+                class="inline-flex items-center justify-center rounded-2xl bg-[#ed2124] px-3 py-3.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(237,33,36,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ff2a2d] hover:shadow-[0_0_42px_rgba(237,33,36,0.8)] sm:shrink-0 sm:rounded-full sm:px-7"
                 >Connect Now</a
               >
             </div>

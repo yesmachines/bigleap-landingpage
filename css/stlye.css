@@ -2548,12 +2548,12 @@ body {
 .quote-field select {
   width: 100%;
   padding: 0.7rem 0.9rem;
-  border: 1.5px solid #e2e8f0;
+  border: 1px solid #38b6ff;
   border-radius: 0.65rem;
   font-family: inherit;
   font-size: 0.875rem;
   color: #1e293b;
-  background: #f8fafc;
+  background: #fff;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
@@ -2567,9 +2567,9 @@ body {
 .quote-field input:focus,
 .quote-field textarea:focus,
 .quote-field select:focus {
-  border-color: #ed2124;
+  border-color: #38b6ff;
   background: #fff;
-  box-shadow: 0 0 0 3px rgb(237 33 36 / 0.12);
+  box-shadow: 0 0 0 3px rgb(56 182 255 / 0.12);
 }
 .quote-field textarea {
   resize: vertical;
@@ -2578,9 +2578,8 @@ body {
 .quote-field.is-invalid input,
 .quote-field.is-invalid textarea,
 .quote-field.is-invalid select {
-  border-color: #ed2124;
-  background: #fff5f5;
-  box-shadow: 0 0 0 3px rgb(237 33 36 / 0.1);
+  border-color: #38b6ff;
+  background: #fff;
 }
 .quote-field-error {
   margin: 0.3rem 0 0;

@@ -2775,9 +2775,18 @@ body {
 }
 @media (max-width: 767px) {
   .mobile-button {
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+  #about-story .attractive-cta {
+    width: 90%;
+  }
+  .attractive-btn,
+  .mobile-button > a,
+  .hero-cta > a {
+    font-size: 13px;
+    padding: 14px 6px;
   }
   .quote-modal {
     padding: 10px;

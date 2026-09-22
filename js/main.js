@@ -222,28 +222,28 @@ function initSlider({
 (function () {
   const services = [
     {
-      title: "2D Animation",
-      text: "2D animation brings matchless brand character into any brand. As a 2D animation agency, we focus on building the exact 2D aesthetic that would make your brand stand out.",
+      title: "3D Animation Production",
+      text: "Custom 3D animation for marketing campaigns, websites, presentations and business communication.",
       img: ASSET_BASE + "img/services/2D-animation.webp",
     },
     {
-      title: "3D Animation",
-      text: "A cutting-edge 3D brand image means immeasurable depth and sophistication to your brand identity. With our tailored 3D animation services, you can create your own brand presence anywhere in the world and stand out.",
+      title: "Industrial & Technical 3D Animation",
+      text: "Explain machinery, engineering systems, internal mechanisms and complex technical processes using professional industrial 3D animation.",
       img: ASSET_BASE + "img/services/3D.webp",
     },
     {
-      title: "Product Animation",
-      text: "Taking the scope of your product above and beyond with advanced 3D product animation services. If you’re looking for a know-it-all product animation company, look no further than Big Leap.",
+      title: "3D Product Visualization",
+      text: "Show product design, features, components and functionality through professional 3D product visualization.",
       img: ASSET_BASE + "img/services/product.webp",
     },
     {
-      title: "Character Design",
-      text: "Bring your characters to life with expert character designing and rigging. We turn concepts into reality, animating characters to move. ",
+      title: "CGI & 3D Video Production",
+      text: "Create high-quality 3D videos using modelling, animation, lighting, CGI, rendering and post-production.",
       img: ASSET_BASE + "img/services/Character-design.webp",
     },
     {
-      title: "Product Explainer Videos",
-      text: "Maybe your product/service needs to be explained to your target audience. As a product explanation video company, we follow a comprehensive approach across understanding your product/service to shooting and editing an explainer video that covers everything from brand tone to visibility.",
+      title: "3D Character Animation",
+      text: "Bring custom characters and brand mascots to life through professional 3D modelling, rigging and animation.",
       img: ASSET_BASE + "img/services/product-animation.webp",
     },
   ];
@@ -283,12 +283,12 @@ function initSlider({
   const grid = document.getElementById("indGrid");
   if (!grid) return;
   const industries = [
-    { label: "Architecture", img: ASSET_BASE + "img/industry/Architecture.webp" },
+    { label: "Architecture & Real Estate", img: ASSET_BASE + "img/industry/Architecture.webp" },
     { label: "Automotive", img: ASSET_BASE + "img/industry/Automotive.webp" },
-    { label: "Fashion", img: ASSET_BASE + "img/industry/Fashion.webp" },
-    { label: "Film & TV", img: ASSET_BASE + "img/industry/Film-and-TV.webp" },
-    { label: "Games", img: ASSET_BASE + "img/industry/Games.webp" },
-    { label: "Retail", img: ASSET_BASE + "img/industry/Retail.webp" },
+    { label: "Industrial & Manufacturing", img: ASSET_BASE + "img/industry/Fashion.webp" },
+    { label: "Technology", img: ASSET_BASE + "img/industry/Film-and-TV.webp" },
+    { label: "Healthcare", img: ASSET_BASE + "img/industry/Games.webp" },
+    { label: "Retail & Consumer Products", img: ASSET_BASE + "img/industry/Retail.webp" },
   ];
   grid.innerHTML = industries
     .map(

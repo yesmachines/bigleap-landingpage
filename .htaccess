@@ -1,6 +1,8 @@
 Options -MultiViews
 RewriteEngine On
 
+ErrorDocument 404 /404.html
+
 # Redirect .html URLs to clean URLs (e.g. /thank-you.html → /thank-you)
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]

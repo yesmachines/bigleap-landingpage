@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#0c0c0e" />
+    <title>Page Not Found | BigLeap</title>
+    <link rel="preload" href="/img/bigleap-logo.webp" as="image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Suez+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        padding: 24px;
+        place-items: center;
+        color: #fff;
+        background:
+          radial-gradient(ellipse at 50% 20%, rgb(237 33 36 / 18%), transparent 48%),
+          linear-gradient(135deg, #0c0c0e, #1a1214 55%, #0a0a0c);
+        font-family: Poppins, sans-serif;
+        text-align: center;
+      }
+
+      main {
+        width: min(100%, 600px);
+      }
+
+      img {
+        display: block;
+        width: min(220px, 65vw);
+        height: auto;
+        margin: 0 auto 24px;
+      }
+
+      .error-code {
+        margin: 0;
+        color: #ed2124;
+        font-family: "Suez One", serif;
+        font-size: clamp(6rem, 25vw, 10rem);
+        line-height: 1;
+      }
+
+      h1 {
+        margin: 20px 0 12px;
+        font-size: clamp(1.5rem, 5vw, 2.25rem);
+      }
+
+      .message {
+        margin: 0 auto 32px;
+        color: rgb(255 255 255 / 70%);
+        line-height: 1.7;
+      }
+
+      .home-link {
+        display: inline-block;
+        padding: 13px 28px;
+        border-radius: 999px;
+        color: #fff;
+        background: #ed2124;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 160ms ease, transform 160ms ease;
+      }
+
+      .home-link:hover {
+        transform: translateY(-2px);
+        background: #c9181b;
+      }
+
+      .home-link:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a href="/" aria-label="BigLeap home">
+        <img src="/img/bigleap-logo.webp" alt="BigLeap" />
+      </a>
+      <p class="error-code" aria-hidden="true">404</p>
+      <h1>Page not found</h1>
+      <p class="message">
+        The page you’re looking for doesn’t exist.
+      </p>
+      <a class="home-link" href="/">Back to Home</a>
+    </main>
+  </body>
+</html>

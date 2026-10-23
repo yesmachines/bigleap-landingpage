@@ -762,6 +762,21 @@ function initSlider({
   });
 })();
 (function () {
+  const youtubeSection = document.getElementById("youtube");
+  if (!youtubeSection) return;
+  document.querySelectorAll('a[href="#youtube"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      youtubeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search,
+      );
+    });
+  });
+})();
+(function () {
   const year = document.getElementById("footerYear");
   if (year) year.textContent = new Date().getFullYear();
 })();

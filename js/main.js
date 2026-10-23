@@ -553,6 +553,7 @@ function initSlider({
     return err;
   };
   const setFieldError = (input, message) => {
+    if (!input) return;
     const wrap = input.closest(".quote-field");
     const err = ensureErrorEl(input);
     if (!wrap || !err) return;
@@ -735,7 +736,7 @@ function initSlider({
     form.hidden = !1;
     if (success) success.hidden = !0;
     form.reset();
-    Object.values(fields).forEach(clearFieldError);
+    Object.values(fields).filter(Boolean).forEach(clearFieldError);
     setFormAlert("");
     modal.removeAttribute("hidden");
     modal.setAttribute("aria-hidden", "false");
